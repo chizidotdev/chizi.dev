@@ -1,6 +1,7 @@
 declare module '@sanity/block-content-to-markdown';
 declare interface Window {
 	PaystackPop: any;
+	gsap: any;
 }
 
 type Snippet = {
