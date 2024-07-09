@@ -12,7 +12,7 @@
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
-	--color: #134cc9;
+	--color: #2463eb;
 	--clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
