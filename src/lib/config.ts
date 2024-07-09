@@ -11,24 +11,18 @@ export const personalData = {
         Currently Frontend Engineer at Pioneering Programmers.`,
 	projects: [
 		{
+			title: 'Link',
+			link: 'https://aidm.link',
+			summary:
+				'Digital portfolio generator for creatives. Publish an online portfolio in just a few minutes and showcase your work to the world.',
+			pending: true
+		},
+		{
 			title: 'Copia',
 			link: 'https://copia.aidmedium.com',
 			summary:
 				'Headless multi-vendor e-commerce platform for small businesses and direct sales representatives.',
 			pending: true
-		},
-		{
-			title: 'Winewave',
-			link: 'https://winewave.ng/',
-			summary: 'Custom storefront for a winery, with a focus on user experience and accessibility.',
-			pending: false
-		},
-		{
-			title: 'Aidmedium',
-			link: 'https://aidmedium.com',
-			summary:
-				'A creative digital product studio helping individuals and businesses grow their online presence.',
-			pending: false
 		},
 		{
 			title: 'Nuntius',
