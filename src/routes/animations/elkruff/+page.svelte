@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '@fontsource-variable/bricolage-grotesque';
+	import '@fontsource-variable/jetbrains-mono';
 	import { onMount } from 'svelte';
 	import './styles.css';
 	import { animate } from './animate';

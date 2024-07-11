@@ -9,6 +9,7 @@
 		<a href="/" class={buttonStyles({ variant: 'link' })}>home</a>
 		<a href="/work" class={buttonStyles({ variant: 'link' })}>work</a>
 		<a href="/snippets" class={buttonStyles({ variant: 'link' })}>snippets</a>
+		<a href="/animations" class={buttonStyles({ variant: 'link' })}>animations</a>
 	</div>
 
 	<div class="flex items-center gap-3">
