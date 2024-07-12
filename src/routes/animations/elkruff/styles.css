@@ -9,7 +9,7 @@
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
-	--color: #2463eb;
+	--color: #fff;
 	--clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
@@ -38,7 +38,7 @@ footer p {
 	position: relative;
 }
 
-a,
+button,
 p {
 	text-decoration: none;
 	color: #fff;
@@ -46,6 +46,12 @@ p {
 	font-weight: 500;
 	font-size: 13px;
 	text-transform: uppercase;
+}
+
+button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
 }
 
 .tagline {

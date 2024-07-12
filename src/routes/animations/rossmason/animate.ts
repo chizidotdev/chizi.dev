@@ -20,13 +20,12 @@ export function animate(gsap: typeof TGsap) {
 	tl.from('.preview', {
 		width: '0',
 		margin: '0',
-		duration: 1,
+		duration: 1.5,
 		ease: 'power3.out'
 	});
 
 	tl.to('.header-item', {
 		translateY: '140%',
-		fontSize: '17vw',
 		duration: 1,
 		ease: 'power3.out'
 	});
@@ -44,8 +43,8 @@ export function animate(gsap: typeof TGsap) {
 	tl.to(
 		'.preview',
 		{
-			marginLeft: '-2vw',
-			marginRight: '-4vw',
+			marginLeft: '-1vw',
+			marginRight: '-6vw',
 			width: '30vw',
 			duration: 1,
 			ease: 'power3.out'

@@ -32,7 +32,7 @@ nav {
 	position: relative;
 }
 
-a,
+button,
 p {
 	text-decoration: none;
 	color: #000;
@@ -40,6 +40,12 @@ p {
 	font-weight: 500;
 	font-size: 13px;
 	text-transform: uppercase;
+}
+
+button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
 }
 
 h1 {

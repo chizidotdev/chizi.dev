@@ -19,14 +19,17 @@
 <div class="container">
 	<nav>
 		<div class="logo">
-			<a href=".">{left} {right}</a>
+			<button on:click={() => (window.location.href = '/animations')}>
+				{left}
+				{right}
+			</button>
 		</div>
 		<div class="links">
 			<div class="link">
-				<a href=".">Contact Us</a>
+				<p>Contact Us</p>
 			</div>
 			<div class="link">
-				<a href=".">Menu</a>
+				<p>Menu</p>
 			</div>
 		</div>
 	</nav>
