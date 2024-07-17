@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Text, Badge } from '$lib/components';
+	import { Text } from '$lib/components';
 	import PioneeringProgrammers from './pioneering-programmers.md';
 	import Aidmedium from './aidmedium.md';
 	import CyteCode from './cyte-code.md';
@@ -19,9 +19,7 @@
 </svelte:head>
 
 <hgroup class="mb-8">
-	<Text variant="h1" class="mb-4 flex items-center gap-2">
-		Work <Badge>New</Badge>
-	</Text>
+	<Text variant="h1" class="mb-4 flex items-center gap-2">Work</Text>
 	<Text>{description}</Text>
 </hgroup>
 

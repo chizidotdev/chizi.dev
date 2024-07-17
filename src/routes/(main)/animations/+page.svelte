@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Text, ArticleItem } from '$lib/components';
+	import { Text, ArticleItem, Badge } from '$lib/components';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section>
-	<Text variant="h1" class="mb-4 flex items-center gap-2">Animations</Text>
+	<Text variant="h1" class="mb-4 flex items-center gap-2">Animations <Badge>New</Badge></Text>
 	<!-- <Text>{description}</Text> -->
 
 	<div class="mt-10 grid gap-3 sm:grid-cols-2">
