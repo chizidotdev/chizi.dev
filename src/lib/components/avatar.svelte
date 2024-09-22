@@ -1,9 +1,6 @@
 <script>
   import { cn } from "$lib/utils";
+  // src="https://avatars.githubusercontent.com/u/92993973?s=80"
 </script>
 
-<img
-  src="https://avatars.githubusercontent.com/u/92993973?s=80"
-  class={cn("size-6 rounded-full border", $$props.class)}
-  alt="Profile avatar"
-/>
+<img src="/dp.png" class={cn("size-6 rounded-full border", $$props.class)} alt="Profile avatar" />

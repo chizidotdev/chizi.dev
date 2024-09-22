@@ -27,8 +27,8 @@
 <!-- <Header /> -->
 <Navbar />
 
-<div class="flex min-h-dvh w-full flex-col justify-between bg-background py-10">
-  <main class="mb-20 mt-14 flex-1">
+<div class="flex min-h-dvh w-full flex-col justify-between bg-background">
+  <main class="my-20 flex-1">
     <slot />
   </main>
 

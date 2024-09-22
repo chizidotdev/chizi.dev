@@ -8,9 +8,9 @@
 </script>
 
 <footer
-  class="mt-14 flex flex-col items-center justify-between gap-12 pb-[var(--clamp-nav)] sm:items-start"
+  class="mt-14 flex flex-col items-center justify-between gap-12 bg-muted pb-[var(--clamp-nav)] pt-20 sm:items-start"
 >
-  <div class="container mb-10 max-w-xl">
+  <div class="container mb-6 max-w-xl">
     <div class="flex flex-col gap-6 text-center">
       <Text variant="h1">It's your move. Let's chat!</Text>
       <Text>

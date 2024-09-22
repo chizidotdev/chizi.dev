@@ -7,6 +7,7 @@
   import Services from "./services.svelte";
   import Testimonials from "./testimonials.svelte";
   import Faq from "./faq.svelte";
+  import About from "./about.svelte";
 </script>
 
 <svelte:head>
@@ -59,7 +60,7 @@
         Working with Chizi transformed how our business operates, we automated tedious tasks and
         watched our sales grow without lifting a finger!
       </Text>
-      <Text label class="mt-3 text-sm">- Samuel Lopez, Co-Founder @ Parable</Text>
+      <Text label class="mt-3 text-sm">- Michael Gray, CEO @ Gray's Consulting</Text>
     </div>
   </section>
 
@@ -67,6 +68,7 @@
   <Work />
   <Services />
   <Testimonials />
+  <About />
   <Faq />
 
   <!-- <SnippetsPreview snippets={data.snippets} /> -->
