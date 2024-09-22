@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@fontsource-variable/bricolage-grotesque": "^5.0.5",
 		"@fontsource-variable/jetbrains-mono": "^5.0.20",
+		"@fontsource-variable/source-serif-4": "^5.1.0",
 		"@fontsource/marck-script": "^5.0.20",
 		"@sanity/block-content-to-markdown": "^0.0.5",
 		"@sanity/client": "^6.15.3",

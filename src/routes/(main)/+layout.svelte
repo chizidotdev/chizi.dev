@@ -1,39 +1,36 @@
 <script lang="ts">
-	import '../../app.css';
-	import '@fontsource-variable/jetbrains-mono';
-	import '@fontsource-variable/bricolage-grotesque';
-	import Header from './header.svelte';
-	import Footer from './footer.svelte';
-	import { onMount } from 'svelte';
+  import "../../app.css";
+  import Footer from "./footer.svelte";
+  import { onMount } from "svelte";
+  import Navbar from "./navbar.svelte";
 
-	async function detectSWUpdate() {
-		const registration = await navigator.serviceWorker.ready;
+  async function detectSWUpdate() {
+    const registration = await navigator.serviceWorker.ready;
 
-		registration.addEventListener('updatefound', () => {
-			const newWorker = registration.installing;
+    registration.addEventListener("updatefound", () => {
+      const newWorker = registration.installing;
 
-			newWorker?.addEventListener('statechange', () => {
-				if (newWorker.state === 'installed') {
-					newWorker.postMessage({ type: 'SKIP_WAITING' });
-					window.location.reload();
-				}
-			});
-		});
-	}
+      newWorker?.addEventListener("statechange", () => {
+        if (newWorker.state === "installed") {
+          newWorker.postMessage({ type: "SKIP_WAITING" });
+          window.location.reload();
+        }
+      });
+    });
+  }
 
-	onMount(() => {
-		detectSWUpdate;
-	});
+  onMount(() => {
+    detectSWUpdate;
+  });
 </script>
 
-<div
-	class="mx-auto flex min-h-dvh w-full max-w-screen-md flex-col justify-between bg-background px-5 py-10 md:px-12"
->
-	<Header />
+<!-- <Header /> -->
+<Navbar />
 
-	<main class="my-20 flex-1">
-		<slot />
-	</main>
+<div class="flex min-h-dvh w-full flex-col justify-between bg-background py-10">
+  <main class="mb-20 mt-14 flex-1">
+    <slot />
+  </main>
 
-	<Footer />
+  <Footer />
 </div>

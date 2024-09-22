@@ -1,61 +1,73 @@
 <script lang="ts">
-	import { personalData } from '$lib/config';
-	import { SnippetsPreview, Button, Text, ArticleItem, Badge } from '$lib/components';
-	import { MailIcon } from '$lib/icons';
-	import type { PageData } from './$types';
-
-	export let data: PageData;
+  import Avatar from "$lib/components/avatar.svelte";
+  import { personalData, CAL_LINK } from "$lib/config";
+  import { Button, Text } from "$lib/components";
+  import Value from "./value.svelte";
+  import Work from "./work.svelte";
+  import Services from "./services.svelte";
+  import Testimonials from "./testimonials.svelte";
+  import Faq from "./faq.svelte";
 </script>
 
 <svelte:head>
-	<title>Chizi Victor - Software Developer</title>
-	<meta name="title" content="Chizi Victor - Software Developer" />
-	<meta
-		name="description"
-		content="Software developer and unabashed nerd. Building (and occasionally designing) accessible and timeless digital experiences."
-	/>
-	<meta property="og:title" content="Chizi Victor - Software Developer" />
-	<meta
-		property="og:description"
-		content="Software developer and unabashed nerd. Building (and occasionally designing) accessible and timeless digital experiences."
-	/>
-	<meta property="og:image" content="/preview.png" />
+  <title>Chizi Victor - Software Developer</title>
+  <meta name="title" content="Chizi Victor - Software Developer" />
+  <meta
+    name="description"
+    content="Software developer and unabashed nerd. Building (and occasionally designing) accessible and timeless digital experiences."
+  />
+  <meta property="og:title" content="Chizi Victor - Software Developer" />
+  <meta
+    property="og:description"
+    content="Software developer and unabashed nerd. Building (and occasionally designing) accessible and timeless digital experiences."
+  />
+  <meta property="og:image" content="/preview.png" />
 </svelte:head>
 
-<section class="space-y-14 md:space-y-20">
-	<section class="flex flex-col gap-4">
-		<div class="flex flex-col capitalize">
-			<Text variant="h1">{personalData.headline.top}</Text>
-			<Text asLabel variant="h1">
-				{personalData.headline.bottom}
-			</Text>
-		</div>
+<div class="space-y-20 md:space-y-28">
+  <section class="container flex flex-col items-center gap-6 text-center">
+    <div class="flex items-center gap-2">
+      <Avatar />
+      <Text>Chizi Victor</Text>
+    </div>
 
-		<Text>{personalData.summary}</Text>
+    <!-- <div class="flex flex-col capitalize">
+      <Text variant="h1">{personalData.headline.top}</Text>
+      <Text label variant="h1">
+        {personalData.headline.bottom}
+      </Text>
+    </div> -->
 
-		<a href="mailto:chiziwokoma@gmail.com" class="mt-2 w-fit">
-			<Button variant="primary"><MailIcon class="mr-2 w-4 stroke-foreground" /> Contact me</Button>
-		</a>
-	</section>
+    <div class="flex flex-col capitalize">
+      <Text variant="h1">
+        Software solutions partner <br class="hidden sm:block" />for
+        <span class="text-muted-foreground">startups</span>
+        and
+        <span class="text-muted-foreground">businesses.</span>
+      </Text>
+    </div>
 
-	<section>
-		<Text variant="h2">Projects</Text>
-		{#each personalData.projects as project}
-			<a href={project.link} target="_blank" rel="noopener noreferrer">
-				<ArticleItem>
-					<Text variant="h3" class="flex items-center gap-2">
-						{project.title}
-						{#if project.pending}
-							<Badge variant="secondary">In progress</Badge>
-						{/if}
-					</Text>
-					<Text asLabel class="mt-1">
-						{project.summary}
-					</Text>
-				</ArticleItem>
-			</a>
-		{/each}
-	</section>
+    <Text class="max-w-sm">{personalData.summary}</Text>
 
-	<SnippetsPreview snippets={data.snippets} />
-</section>
+    <a href={CAL_LINK} class="mt-2 w-fit">
+      <Button variant="primary"><Avatar /> Book a Free Discovery Call</Button>
+    </a>
+
+    <div class="mt-10 text-center">
+      <Text>We didn’t just hire another faceless dev shop.</Text>
+      <Text label>
+        Working with Chizi transformed how our business operates, we automated tedious tasks and
+        watched our sales grow without lifting a finger!
+      </Text>
+      <Text label class="mt-3 text-sm">- Samuel Lopez, Co-Founder @ Parable</Text>
+    </div>
+  </section>
+
+  <Value />
+  <Work />
+  <Services />
+  <Testimonials />
+  <Faq />
+
+  <!-- <SnippetsPreview snippets={data.snippets} /> -->
+</div>

@@ -14,6 +14,9 @@ importers:
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.0.20
         version: 5.0.20
+      '@fontsource-variable/source-serif-4':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/marck-script':
         specifier: ^5.0.20
         version: 5.0.20
@@ -312,6 +315,9 @@ packages:
 
   '@fontsource-variable/jetbrains-mono@5.0.20':
     resolution: {integrity: sha512-IWJnmY9vT5Olcac1vzA7FMdnojCrZWMq+g7SqC2jsFpY0LQTjIgp9gBjjw9kUOkNbLw37/evZO4w6rdPeMA68A==}
+
+  '@fontsource-variable/source-serif-4@5.1.0':
+    resolution: {integrity: sha512-8VI/4B1bfwaUCSZjPxn7yzHTrAcL/nKi+MgjQwl6Tz4mh/ndOyRtsYxn/KajWTj+MdlaXEGsgoyy6OlTMx05RA==}
 
   '@fontsource/marck-script@5.0.20':
     resolution: {integrity: sha512-ulUT0xBrTkuESwvVQTVfa0Ln82oKh2dHlloWEL47rhvToJlWhu2QlNyhqQ0OD1O4QnDmtTm8QNet1iBw++rXlQ==}
@@ -2034,6 +2040,8 @@ snapshots:
   '@fontsource-variable/bricolage-grotesque@5.0.5': {}
 
   '@fontsource-variable/jetbrains-mono@5.0.20': {}
+
+  '@fontsource-variable/source-serif-4@5.1.0': {}
 
   '@fontsource/marck-script@5.0.20': {}
 
