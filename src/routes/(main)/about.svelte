@@ -2,9 +2,15 @@
   import Text from "$lib/components/text.svelte";
 </script>
 
-<section class="container grid max-w-screen-lg grid-cols-[auto,1fr] gap-10">
+<section
+  class="container flex max-w-screen-lg grid-cols-[auto,1fr] flex-col-reverse gap-10 md:grid"
+>
   <div>
-    <img src="/photo-temple.jpg" class="w-[20vw] rounded-md object-cover" alt="Profile avatar" />
+    <img
+      src="https://ik.imagekit.io/chizidotdev/portfolio/chizidotdev.png"
+      class="w-full rounded-md object-cover md:h-full md:max-w-80"
+      alt="Profile avatar"
+    />
   </div>
   <div class="space-y-4">
     <Text variant="h2">About me</Text>

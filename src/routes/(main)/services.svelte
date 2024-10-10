@@ -16,7 +16,7 @@
   const pricing = [
     { label: "Projects start at", value: "$2,500" },
     { label: "Websites", value: "$2,500" },
-    { label: "Mobile / Web Apps", value: "$5,000 to $15,000" },
+    { label: "Mobile / Web Apps", value: "$6,000+" },
   ];
 </script>
 
@@ -69,15 +69,15 @@
     work together.
     <br />
     <br />
-    Proposal – I’ll send you a tailored proposal within 24 hours, breaking down the project scope, goals,
-    and cost.
+    Proposal – If we come to an agreement, I’ll send you a tailored proposal within 24 hours, breaking
+    down the project scope, goals, and cost.
     <br />
     <br />
     Development – Weekly updates, focused sprints, and constant feedback loops to keep everything on
     track.
     <br />
     <br />
-    Launch – Whether it’s an MVP or an enterprise-grade platform, we’ll ensure your launch goes smoothly.
+    Launch – Whether it’s an MVP or an enterprise-grade platform, I’ll ensure your launch goes smoothly.
     <br />
     <br />
     Support – Ongoing maintenance and support to ensure your software keeps performing, growing, and

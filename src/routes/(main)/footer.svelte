@@ -15,9 +15,11 @@
       <Text variant="h1">It's your move. Let's chat!</Text>
       <Text>
         <span class="hidden sm:inline">We'll determine if there's a fit to work together.</span> No
-        sales pitches, just a productive 30-minute conversation. If you prefer to work async, you
+        sales pitches, just a productive 15-minute conversation. If you prefer to work async, you
         can email me at
-        <span class="text-muted-foreground">hello@chizi.dev</span>
+        <a href="mailto:chiziwokoma@gmail.com" class="text-muted-foreground">
+          chiziwokoma@gmail.com
+        </a>
       </Text>
     </div>
 

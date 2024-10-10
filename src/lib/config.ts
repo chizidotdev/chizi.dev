@@ -72,26 +72,27 @@ export const personalData = {
 
 export const projects = [
   {
+    title: "Aidmedium",
+    thumbnail: "https://ik.imagekit.io/chizidotdev/portfolio/aidmedium/mockup.png",
+    link: "https://aidmedium.com",
+    category: "Agency",
+  },
+  {
     title: "Slimepay Finance Portal",
-    link: "https://aidm.link",
+    thumbnail: "https://ik.imagekit.io/chizidotdev/portfolio/slimepay/mobile-screens.png",
+    link: "https://slimepay.com",
     category: "Fintech",
-    summary:
-      "Digital portfolio generator for creatives. Publish an online portfolio in just a few minutes and showcase your work to the world.",
-    pending: true,
   },
   {
-    title: "Winewave",
-    link: "https://copia.aidmedium.com",
-    category: "Ecommerce",
-    summary:
-      "Headless multi-vendor e-commerce platform for small businesses and direct sales representatives.",
-    pending: true,
+    title: "AM Shop",
+    thumbnail: "https://ik.imagekit.io/chizidotdev/portfolio/ecommerce/store.png",
+    link: "https://aidm.link",
+    category: "Ecommerce Store",
   },
   {
-    title: "Nuntius Web Chat",
-    link: "https://nuntius.aidmedium.com",
-    category: "Social",
-    summary: "An interactive messaging web-app with a dare game.",
-    pending: false,
+    title: "Link",
+    thumbnail: "https://ik.imagekit.io/chizidotdev/portfolio/link/landing.png",
+    link: "https://aidm.link",
+    category: "SaaS",
   },
 ];

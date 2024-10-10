@@ -3,18 +3,18 @@
 
   const testimonials = [
     // {
-    //   name: "Sam Martin",
-    //   title: "CEO",
-    //   company: "QuickRetail",
+    //   name: "Jake Sacks",
+    //   title: "Founder",
+    //   company: "TheShopGuy",
     //   message:
-    //     "Thanks to Chizi, our manual tasks are now automated. From tracking inventory to processing orders, it's all seamless. We’ve saved hundreds of hours in labor!",
+    //     "Our business went from drowning in paperwork to operating on autopilot. The software Chizi built for us has transformed our sales processes and freed up valuable time.",
     // },
     {
-      name: "Jake Sacks",
+      name: "Grace Williams",
       title: "Founder",
-      company: "TheShopGuy",
+      company: "QuickRetail",
       message:
-        "Our business went from drowning in paperwork to operating on autopilot. The software Chizi built for us has transformed our sales processes and freed up valuable time.",
+        "Thanks to Chizi, our manual tasks are now automated. From tracking inventory to processing orders, it's all seamless. We’ve saved hundreds of hours in labor!",
     },
   ];
 </script>
@@ -31,7 +31,7 @@
 
   <div class="container relative mt-10 max-w-4xl rounded-md sm:bg-background sm:py-28">
     <nav class="hidden sm:block">
-      <div class="absolute left-8 top-1/2 -translate-y-1/2">
+      <div class="absolute left-8 top-1/2 hidden -translate-y-1/2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -46,7 +46,7 @@
         >
       </div>
 
-      <div class="absolute right-8 top-1/2 -translate-y-1/2">
+      <div class="absolute right-8 top-1/2 hidden -translate-y-1/2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

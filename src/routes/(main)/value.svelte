@@ -18,7 +18,7 @@
   </div>
 
   <Tabs.Root value="business" class="mt-10 w-full space-y-4">
-    <div class="mx-auto w-full max-w-screen-md px-7 sm:px-4">
+    <div class="mx-auto w-full max-w-screen-md px-4 sm:px-4">
       <Tabs.List class="w-full sm:max-w-sm">
         <Tabs.Trigger value="business">Businesses</Tabs.Trigger>
         <Tabs.Trigger value="startup">Startups</Tabs.Trigger>

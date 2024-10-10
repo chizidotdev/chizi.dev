@@ -8,7 +8,7 @@
   class="fixed inset-x-0 bottom-0 z-10 flex h-[calc(var(--clamp-nav)-1vh)] items-center justify-center"
 >
   <div
-    class="flex items-center gap-2 [&>*]:rounded-full [&>*]:border [&>*]:bg-background/50 [&>*]:backdrop-blur"
+    class="flex items-center gap-2 [&>*]:rounded-full [&>*]:border [&>*]:border-muted-foreground/5 [&>*]:bg-background/50 [&>*]:backdrop-blur"
   >
     <a href="/">
       <Avatar class="size-10" />

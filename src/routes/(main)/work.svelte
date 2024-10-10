@@ -18,7 +18,9 @@
   <div class="container grid max-w-screen-xl gap-10 px-4 md:grid-cols-2">
     {#each projects as project}
       <div class="space-y-4">
-        <div class="aspect-video w-full rounded-md border transition-colors hover:bg-muted" />
+        <div class="aspect-[1.3] w-full rounded-xl border transition-colors hover:bg-muted lg:p-10">
+          <img alt={project.title} src={project.thumbnail} class="aspect-[1.3] w-full rounded-md" />
+        </div>
         <div class="mx-4">
           <Text label>{project.category}</Text>
           <Text>{project.title}</Text>
