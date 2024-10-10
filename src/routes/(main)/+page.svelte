@@ -64,8 +64,9 @@
     <div class="mx-4 my-10 w-full max-w-screen-lg px-4">
       <video
         src="https://ik.imagekit.io/chizidotdev/portfolio/work-preview.mp4"
-        poster="https://ik.imagekit.io/chizidotdev/portfolio/ecommerce/store.png"
+        poster="https://ik.imagekit.io/chizidotdev/portfolio/slimepay/mobile-screens.png"
         muted
+        playsinline
         autoplay
         loop
         class="aspect-[16/11] w-full rounded-md object-cover"
