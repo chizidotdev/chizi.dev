@@ -12,19 +12,19 @@
     const timeline = gsap.timeline();
 
     timeline
-      .to(".blur", {
+      .to(".fade", {
         opacity: 1,
         translateY: 0,
         duration: 0.4,
         ease: "power3.out",
-        stagger: 0.02,
+        stagger: 0.04,
       })
-      .to(".blur", {
+      .to(".fade", {
         scale: 1,
         filter: "blur(0px)",
-        duration: 0.4,
+        duration: 0.3,
         ease: "power3.out",
-        stagger: 0.03,
+        stagger: 0.05,
       });
   }
 
@@ -53,6 +53,7 @@
   <meta name="twitter:image" content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png" />
 </svelte:head>
 
+<div class="sticky-blur"></div>
 <main class="container mt-16 flex-1 space-y-12 sm:mt-24">
   {@render children()}
 </main>

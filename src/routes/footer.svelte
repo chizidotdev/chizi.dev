@@ -5,7 +5,7 @@
 <footer
   class="my-20 flex flex-col items-center justify-between gap-12 pb-[calc(var(--clamp-nav)+2vh)] pt-16 sm:items-start"
 >
-  <div class="container flex w-fit items-center gap-3 blur">
+  <div class="fade container flex w-fit items-center gap-3">
     {#each personalData.socials as link}
       <a
         href={link.url}
@@ -19,7 +19,7 @@
     {/each}
   </div>
 
-  <p class="container max-w-md text-center blur">
+  <p class="fade container max-w-md text-center">
     Developed by <span class="text-muted-foreground">@chizidotdev</span>. Built with
     <a href="https://svelte.dev/docs/kit" class="link" target="_blank" rel="noopener noreferrer">
       SvelteKit
