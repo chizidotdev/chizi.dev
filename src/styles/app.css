@@ -1,0 +1,67 @@
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource-variable/newsreader/opsz.css";
+
+@import url("./geist.css");
+@import url("./markdown.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Geist-Variable", sans-serif;
+    --font-mono: "JetBrains Mono Variable", monospace;
+    --font-serif: "Newsreader Variable", serif;
+
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 20.5 90.2% 48.2%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 20.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72.2% 56.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 240 3.7% 28.9%;
+    --input: 240 3.7% 28.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply flex min-h-[90dvh] flex-col bg-background font-sans text-foreground;
+  }
+  svg {
+    @apply stroke-muted-foreground;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .link {
+    @apply underline decoration-border underline-offset-4 transition-colors hover:decoration-muted-foreground;
+  }
+}
+
+.blur {
+  transform: translateY(2.5rem);
+  scale: 100%;
+  opacity: 0.1;
+  filter: blur(12px);
+}
