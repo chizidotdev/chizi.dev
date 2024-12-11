@@ -60,10 +60,10 @@
 }
 
 .fade {
-  transform: translateY(2.5rem);
-  scale: 100%;
-  opacity: 0.1;
-  filter: blur(12px);
+  transform: translateY(3rem);
+  scale: 105%;
+  opacity: 0.2;
+  filter: blur(14px);
 }
 
 .sticky-blur {

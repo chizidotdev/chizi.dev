@@ -10,11 +10,11 @@
     <Paragraph class="text-muted-foreground">Chizi Victor</Paragraph>
   </div>
 
-  <div>
-    <Paragraph class="fade inline">
+  <div class="fade">
+    <Paragraph class="inline">
       {personalData.headline}
     </Paragraph>
-    <Paragraph class="fade inline text-muted-foreground">{personalData.bio}</Paragraph>
+    <Paragraph class="inline text-muted-foreground">{personalData.bio}</Paragraph>
   </div>
 </section>
 

@@ -14,17 +14,17 @@
     timeline
       .to(".fade", {
         opacity: 1,
-        translateY: 0,
         duration: 0.4,
         ease: "power3.out",
-        stagger: 0.04,
+        stagger: 0.03,
       })
       .to(".fade", {
         scale: 1,
+        translateY: 0,
         filter: "blur(0px)",
-        duration: 0.3,
+        duration: 0.4,
         ease: "power3.out",
-        stagger: 0.05,
+        stagger: 0.08,
       });
   }
 
