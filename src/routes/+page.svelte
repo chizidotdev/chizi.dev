@@ -40,18 +40,12 @@
 
   <div class="mt-4 space-y-6">
     <Paragraph class="fade">
-      Currently copying and pasting code at
-      <a class="link" target="_blank" href="https://turing.com">Turing.</a>
-      Not really though, I'm a software developer I swear.
-    </Paragraph>
-
-    <Paragraph class="fade">Spending way too much time tinkering with this site.</Paragraph>
-
-    <Paragraph class="fade">
       Running <a class="link" href="https://aidmedium.com" target="_blank">Aidmedium</a>
       where I use my <s class="font-serif italic">addiction</s> passion for software to assist businesses
       and startups.
     </Paragraph>
+
+    <Paragraph class="fade">Spending way too much time tinkering with this site.</Paragraph>
 
     <Paragraph class="fade">
       Journaling and writing are my new hobbies. I'm trying to document my journey and learnings as

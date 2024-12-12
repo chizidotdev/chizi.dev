@@ -24,7 +24,7 @@
         filter: "blur(0px)",
         duration: 0.4,
         ease: "power3.out",
-        stagger: 0.08,
+        stagger: 0.05,
       });
   }
 
