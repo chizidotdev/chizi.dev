@@ -3,6 +3,7 @@
   import { gsap } from "gsap";
   import "../styles/app.css";
 
+  import { onNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import Footer from "./footer.svelte";
 
@@ -31,6 +32,15 @@
   onMount(() => {
     animate();
   });
+
+  onNavigate((navigation) => {
+    return new Promise((resolve) => {
+      resolve();
+      navigation.complete.then(() => {
+        animate();
+      });
+    });
+  });
 </script>
 
 <svelte:head>
@@ -54,7 +64,7 @@
 </svelte:head>
 
 <div class="sticky-blur"></div>
-<main class="container mt-16 flex-1 space-y-12 sm:mt-24">
+<main class="container mt-24 flex-1 space-y-12">
   {@render children()}
 </main>
 
