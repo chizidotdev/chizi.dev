@@ -17,18 +17,18 @@ export const personalData = {
       summary: "Email setup guide for Software developers.",
       pending: true,
       external: false,
-    },*/
+    },
     {
       title: "Link",
       link: "https://aidm.link?ref=chizidotdev",
       summary: "Digital portfolio generator for creatives.",
       pending: true,
       external: true,
-    },
+    },*/
     {
       title: "Aidmedium",
       link: "https://aidmedium.com?ref=chizidotdev",
-      summary: "Software development for business owners and startups.",
+      summary: "Design and development of online stores, marketing sites, and web applications.",
       pending: false,
       external: true,
     },

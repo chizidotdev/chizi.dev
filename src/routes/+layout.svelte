@@ -4,6 +4,8 @@
   import "../styles/app.css";
 
   import { onNavigate } from "$app/navigation";
+  import { Avatar } from "$lib/components/avatar";
+  import { Paragraph } from "$lib/components/text";
   import { onMount } from "svelte";
   import Footer from "./footer.svelte";
 
@@ -11,6 +13,8 @@
 
   async function animate() {
     const timeline = gsap.timeline();
+
+    gsap.set(".fade", { translateY: "3rem", opacity: 0.2, filter: "blur(14px)" });
 
     timeline
       .to(".fade", {
@@ -65,6 +69,13 @@
 
 <div class="sticky-blur"></div>
 <main class="container mt-24 flex-1 space-y-12">
+  <header class="fade">
+    <a href="/" class="flex w-fit items-center gap-2">
+      <Avatar class="rounded" />
+      <Paragraph class="text-muted-foreground">Chizi Victor</Paragraph>
+    </a>
+  </header>
+
   {@render children()}
 </main>
 

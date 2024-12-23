@@ -1,4 +1,6 @@
 #markdown {
+  @apply leading-7;
+
   h1,
   h2,
   h3 {
@@ -30,6 +32,10 @@
 
     li {
       @apply mb-1;
+
+      &::marker {
+        @apply !mr-1;
+      }
     }
   }
 

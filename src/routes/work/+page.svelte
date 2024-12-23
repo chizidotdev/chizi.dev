@@ -16,17 +16,15 @@
   <meta property="og:type" content="article" />
 </svelte:head>
 
-<hgroup class="mb-8 space-y-8">
-  <Heading class="fade font-serif text-muted-foreground">Work</Heading>
-</hgroup>
-
-<div class="border-t py-6">
+<div>
   <Heading class="fade font-serif" variant="h2">Pioneering Programmers</Heading>
   <Paragraph class="fade mb-4">Senior Frontend Engineer, 2022 - 2024</Paragraph>
   <div class="fade text-muted-foreground">
     <PioneeringProgrammers />
   </div>
 </div>
+
+<div class="border-b"></div>
 
 <!-- <div class="border-t py-6"> -->
 <!--   <Text variant="h3">Aidmedium</Text> -->
@@ -36,7 +34,7 @@
 <!--   </div> -->
 <!-- </div> -->
 
-<div class="border-t py-6">
+<div>
   <Heading class="fade font-serif" variant="h2">Cyte Technologies</Heading>
   <Paragraph class="fade mb-4">Frontend Developer, 2021 - 2022</Paragraph>
   <div class="fade text-muted-foreground">

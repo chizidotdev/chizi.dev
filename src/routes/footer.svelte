@@ -3,13 +3,8 @@
 </script>
 
 <footer
-  class="my-20 flex flex-col items-center justify-between gap-12 pb-[calc(var(--clamp-nav)+2vh)] pt-16 sm:items-start"
+  class="my-20 flex flex-col items-center justify-between gap-12 pb-[calc(var(--clamp-nav)+2vh)] pt-10 sm:items-start"
 >
-  <div class="fade mx-auto flex gap-4">
-    <a class="link" href="/">Home</a>
-    <a class="link" href="/work">Work</a>
-  </div>
-
   <div class="fade container flex w-fit items-center gap-3">
     {#each personalData.socials as link}
       <a
