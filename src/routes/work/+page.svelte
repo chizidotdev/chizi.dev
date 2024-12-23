@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { Avatar } from "$lib/components/avatar";
   import { Heading, Paragraph } from "$lib/components/text";
   import CyteCode from "./cyte-code.md";
   import PioneeringProgrammers from "./pioneering-programmers.md";
@@ -18,11 +17,6 @@
 </svelte:head>
 
 <hgroup class="mb-8 space-y-8">
-  <div class="fade flex items-center gap-2">
-    <Avatar class="rounded" />
-    <Paragraph class="text-muted-foreground">Chizi Victor</Paragraph>
-  </div>
-
   <Heading class="fade font-serif text-muted-foreground">Work</Heading>
 </hgroup>
 

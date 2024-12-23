@@ -56,6 +56,14 @@
       If you need more than two tabs to find the solution, write the answer down somewhere.
     </Heading>
 
+    <!-- <Paragraph class="fade">
+      Reading
+      <a class="link" href="https://literal.club/book/jim-edwards-copywriting-secrets-ehc2j">
+        Copywriting Secrets
+      </a>
+      on one end, grinding DSA on the other.
+    </Paragraph> -->
+
     <Paragraph class="fade">
       Last updated on December 05, 2024. This
       <a class="link" target="_blank" href="https://nownownow.com/about">now section</a>
