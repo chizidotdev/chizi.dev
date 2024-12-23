@@ -20,14 +20,14 @@
   <Heading variant="h4" class="fade">Browse</Heading>
 
   <div class="mt-4 flex flex-col gap-3">
+    <a class="fade link w-fit" href="/now">
+      Now<ArrowUpRight class="mb-1.5 inline" size={12} />
+    </a>
     <a class="fade link w-fit" href="/snippets">
       Snippets<ArrowUpRight class="mb-1.5 inline" size={12} />
     </a>
     <a class="fade link w-fit" href="/work">
       Work<ArrowUpRight class="mb-1.5 inline" size={12} />
-    </a>
-    <a class="fade link w-fit" href="/now">
-      Now<ArrowUpRight class="mb-1.5 inline" size={12} />
     </a>
   </div>
 </section>
