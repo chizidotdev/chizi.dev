@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="border-b"></div>
+<div class="fade border-b"></div>
 
 <!-- <div class="border-t py-6"> -->
 <!--   <Text variant="h3">Aidmedium</Text> -->

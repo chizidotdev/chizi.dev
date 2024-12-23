@@ -13,7 +13,6 @@
   <meta property="og:description" content={data.meta.description} />
   <meta property="og:title" content={data.meta.title} />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="/og-snippets.png" />
 </svelte:head>
 
 <a href="/snippets" class="fade flex items-center gap-2">
