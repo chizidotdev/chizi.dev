@@ -61,7 +61,7 @@
 
 .fade {
   transform: translateY(3rem);
-  scale: 105%;
+  /* scale: 105%; */
   opacity: 0.2;
   filter: blur(14px);
 }

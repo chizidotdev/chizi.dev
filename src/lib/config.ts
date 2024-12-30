@@ -32,12 +32,13 @@ export const personalData = {
       pending: false,
       external: true,
     },
-    /*{
-      title: "Nuntius",
-      link: "https://nuntius.aidmedium.com",
-      summary: "An anonymous messaging web-app.",
-      pending: false,
-    },*/
+    {
+      title: "Nuntio",
+      link: "https://nuntio.cc?ref=chizidotdev",
+      summary: "Anonymous messaging web application with a twist.",
+      pending: true,
+      external: true,
+    },
   ],
   socials: [
     { icon: TwitterIcon, id: "twitter", name: "Twitter", url: "https://twitter.com/chizidotdev" },
