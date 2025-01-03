@@ -8,6 +8,7 @@
   import { Paragraph } from "$lib/components/text";
   import { onMount } from "svelte";
   import Footer from "./footer.svelte";
+  import Analytics from "./analytics.svelte";
 
   let { children } = $props();
 
@@ -66,6 +67,8 @@
   <meta name="twitter:description" content={personalData.headline} />
   <meta name="twitter:image" content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png" />
 </svelte:head>
+
+<Analytics />
 
 <div class="sticky-blur"></div>
 <main class="container mt-24 flex-1 space-y-12">
