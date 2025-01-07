@@ -2,6 +2,12 @@
   import { Heading, Paragraph } from "$lib/components/text";
 </script>
 
+<svelte:head>
+  <title>Now - Chizi Victor</title>
+  <meta name="title" content="Now - Chizi Victor" />
+  <meta property="og:title" content="Now - Chizi Victor" />
+</svelte:head>
+
 <section>
   <Heading variant="h4" class="fade">Now</Heading>
 
