@@ -91,6 +91,12 @@
     border: 1px solid hsl(var(--border));
   }
 
+  th,
+  td {
+    text-align: left;
+    padding-right: 1rem;
+  }
+
   .token.comment,
   .token.prolog,
   .token.doctype,
