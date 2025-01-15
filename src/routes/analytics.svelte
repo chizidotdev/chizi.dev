@@ -26,6 +26,6 @@
     }
 
     gtag("js", new Date());
-    gtag("config", GOOGLE_TAG_ID);
+    gtag("config", "G-WGPRFZV0DS");
   </script>
 </svelte:head>
