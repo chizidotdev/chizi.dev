@@ -89,6 +89,7 @@
     white-space: normal;
     background: hsl(var(--muted));
     border: 1px solid hsl(var(--border));
+    @apply break-words;
   }
 
   th,
