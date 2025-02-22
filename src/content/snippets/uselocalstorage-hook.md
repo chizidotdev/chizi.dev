@@ -12,7 +12,7 @@ Hook to use local storage as a realtime data store in React. Utilizes the `stora
 import { Dispatch, SetStateAction, useState } from "react";
 
 /**
- * synchronie reactive state with local storage listener.
+ * synchronize reactive state with local storage listener.
  * @template T The type of the state value.
  * @param {string} key The key under which the state will be stored in local storage.
  * @param {T} initialValue The initial value of the state.
