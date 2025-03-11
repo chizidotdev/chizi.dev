@@ -5,8 +5,8 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  $: snippets = data.snippets;
-  let description = "Bunch of stuff I keep forgetting no matter how much I use em."; // A collection of code snippets I've developed/stolen over time and tend to use often. Ranging from random utililty hooks to environment setup instructions.";
+  $: snippets = data.snippets ?? [];
+  let description = "Bunch of stuff I keep forgetting no matter how much I use them.";
 </script>
 
 <svelte:head>
@@ -18,22 +18,21 @@
   <meta property="og:type" content="article" />
 </svelte:head>
 
-{#if snippets?.length}
-  <section>
-    <div class="fade space-y-2">
-      <Heading variant="h4">Snippets</Heading>
-      <Paragraph>{description}</Paragraph>
-    </div>
+<section>
+  <div class="space-y-2">
+    <Heading variant="h3">{description}</Heading>
+  </div>
 
-    <div class="mt-10 space-y-6">
-      {#each snippets as snippet}
-        <a href={`/snippets/${snippet.slug}`} class="fade block">
-          <Paragraph class="text-muted-foreground">
-            {snippet.description}<MoveUpRight class="mb-1.5 inline" size={12} />
-          </Paragraph>
-          <Paragraph class="text-sm">{formatDate(snippet.date, "MMM YYYY")}</Paragraph>
-        </a>
-      {/each}
-    </div>
-  </section>
-{/if}
+  <div class="mt-10 space-y-6">
+    {#each snippets as snippet}
+      <a href={`/snippets/${snippet.slug}`} class="block">
+        <Paragraph>
+          {snippet.description}<MoveUpRight class="mb-1.5 inline" size={12} />
+        </Paragraph>
+        <Paragraph class="text-sm text-muted-foreground">
+          {formatDate(snippet.date, "MMM YYYY")}
+        </Paragraph>
+      </a>
+    {/each}
+  </div>
+</section>

@@ -8,23 +8,25 @@
 </script>
 
 <svelte:head>
-  <title>Work - Chizi Victor</title>
-  <meta name="title" content="Work - Chizi Victor" />
+  <title>Resume - Chizi Victor</title>
+  <meta name="title" content="Resume - Chizi Victor" />
   <meta name="description" content={description} />
   <meta property="og:description" content={description} />
   <meta property="og:title" content="Work - Chizi Victor" />
   <meta property="og:type" content="article" />
 </svelte:head>
 
+<!-- <Heading variant="h3" class="mb-10">{description}</Heading> -->
+
 <div>
-  <Heading class="fade font-serif" variant="h2">Pioneering Programmers</Heading>
-  <Paragraph class="fade mb-4">Senior Frontend Engineer, 2022 - 2024</Paragraph>
-  <div class="fade text-muted-foreground">
+  <Heading class="font-serif">Pioneering Programmers</Heading>
+  <Paragraph class="mb-4">Senior Frontend Engineer, 2022 - 2024</Paragraph>
+  <div class=" text-muted-foreground">
     <PioneeringProgrammers />
   </div>
 </div>
 
-<div class="fade border-b"></div>
+<div class="border-b"></div>
 
 <!-- <div class="border-t py-6"> -->
 <!--   <Text variant="h3">Aidmedium</Text> -->
@@ -35,9 +37,9 @@
 <!-- </div> -->
 
 <div>
-  <Heading class="fade font-serif" variant="h2">Cyte Technologies</Heading>
-  <Paragraph class="fade mb-4">Frontend Developer, 2021 - 2022</Paragraph>
-  <div class="fade text-muted-foreground">
+  <Heading class="font-serif">Cyte Technologies</Heading>
+  <Paragraph class="mb-4">Frontend Developer, 2021 - 2022</Paragraph>
+  <div class=" text-muted-foreground">
     <CyteCode />
   </div>
 </div>

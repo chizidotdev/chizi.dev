@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Heading, Paragraph } from "$lib/components/text";
   import { formatDate } from "$lib/utils";
-  import { ChevronLeftIcon } from "lucide-svelte";
+  import { CornerUpLeft } from "lucide-svelte";
   import type { PageData } from "./$types";
 
   export let data: PageData;
@@ -15,22 +15,22 @@
   <meta property="og:type" content="article" />
 </svelte:head>
 
-<a href="/snippets" class="fade flex items-center gap-2">
-  <ChevronLeftIcon size={16} /> Snippets
+<a href="/snippets" class=" flex items-center gap-2">
+  <CornerUpLeft class="size-4" /> Snippets
 </a>
 
 <article class="flex flex-col gap-10">
   <hgroup class="space-y-1">
-    <Paragraph class="fade text-sm text-muted-foreground">
+    <Paragraph class=" text-sm text-muted-foreground">
       {formatDate(new Date(data.meta.date), "MMM DD, YYYY")}
     </Paragraph>
-    <Heading class="fade font-serif">
+    <Heading class=" font-serif">
       {data.meta.title}
     </Heading>
-    <Paragraph class="fade">{data.meta.description}</Paragraph>
+    <Paragraph class="">{data.meta.description}</Paragraph>
   </hgroup>
 
-  <div class="fade">
+  <div class="">
     <svelte:component this={data.content} />
   </div>
 </article>
