@@ -36,7 +36,7 @@
           class="absolute inset-0 size-full rounded-md object-cover opacity-0 transition group-hover:opacity-100"
         />
       </div>
-      <div class="mt-2 max-w-lg text-sm">
+      <div class="mt-2 max-w-md text-sm">
         <Paragraph class="font-medium">{item.title}</Paragraph>
         <Paragraph class="leading-5 text-muted-foreground">{item.description}</Paragraph>
       </div>
