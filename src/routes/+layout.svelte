@@ -50,16 +50,13 @@
   <meta name="twitter:image" content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png" />
 </svelte:head>
 
+<div class="sticky-blur"></div>
+
 <ModeWatcher />
 <Analytics />
 
-<div class="sticky-blur"></div>
-<main class="container mt-24 flex-1 space-y-12">
-  <Header />
-
-  <div id="main-content" class="mt-12 space-y-12">
-    {@render children()}
-  </div>
+<Header />
+<main class="container mt-12 flex-1 space-y-12">
+  {@render children()}
 </main>
-
 <Footer />

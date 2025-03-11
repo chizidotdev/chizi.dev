@@ -85,7 +85,7 @@
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) * 0.5);
   }
 
   :not(pre) > code[class*="language-"],
@@ -102,13 +102,13 @@
 
   /* Inline code */
   :not(pre) > code {
-    font-size: 0.9em;
-    padding-inline: 0.2em;
-    border-radius: calc(var(--radius) * 0.5);
+    font-size: 0.85em;
+    padding-inline: 0.3em;
+    border-radius: 4px;
     white-space: normal;
-    background: var(--poimandres-bg-dark);
-    border: 1px solid var(--poimandres-border);
-    color: var(--poimandres-text-primary);
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--muted-foreground));
     @apply break-words;
   }
 

@@ -15,7 +15,7 @@
   ];
 </script>
 
-<header class="space-y-6">
+<header class="container mt-24 space-y-6">
   <section class="flex items-center justify-between gap-2">
     <Avatar class="size-14 sm:size-20" />
     <ThemeToggle />
@@ -31,7 +31,7 @@
   </div>
 </header>
 
-<nav class="sticky top-4 z-10 flex items-center gap-1.5">
+<nav class="container sticky top-4 z-10 mt-6 flex items-center gap-1.5">
   {#each navItems as { href, title, pathRegex }}
     <a
       {href}
