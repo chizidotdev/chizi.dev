@@ -9,10 +9,9 @@
   const headingVariants = cva("scroll-m-20 font-display", {
     variants: {
       variant: {
-        h1: "text-2xl font-semibold first:mt-0",
-        h2: "text-xl font-semibold",
-        h3: "text-lg font-medium",
-        h4: "font-serif italic text-muted-foreground",
+        h1: "text-xl font-medium first:mt-0",
+        h2: "text-lg font-medium",
+        h3: "text-lg font-serif italic text-muted-foreground",
       },
     },
     defaultVariants: {
@@ -24,5 +23,5 @@
 </script>
 
 <svelte:element this={element} class={cn(headingVariants({ variant }), className)} {...props}>
-  {@render children()}
+  {@render children?.()}
 </svelte:element>

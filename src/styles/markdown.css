@@ -39,11 +39,31 @@
     }
   }
 
+  /* Poimandres Theme Colors */
+  --poimandres-bg-dark: #1b1e28;
+  --poimandres-bg-medium: #212534;
+  --poimandres-bg-light: #252734;
+  --poimandres-border: #303340;
+
+  /* Text Colors */
+  --poimandres-text-primary: #e4f0fb;
+  --poimandres-text-muted: #8a91a9;
+  --poimandres-text-subtle: #a6accd;
+
+  /* Syntax Colors */
+  --poimandres-teal: #5de4c7;
+  --poimandres-light-teal: #ade7e7;
+  --poimandres-blue-green: #7fdbca;
+  --poimandres-light-blue: #add7ff;
+  --poimandres-blue: #91b4d5;
+  --poimandres-purple: #d4bfff;
+  --poimandres-pink: #df95be;
+
   code[class*="language-"],
   pre[class*="language-"] {
     font-family: var(--font-mono);
-    font-size: 0.8rem /* 12.8px */;
-    color: #f8f8f2;
+    font-size: 0.8rem;
+    color: var(--poimandres-text-primary);
     background: none;
     text-align: left;
     white-space: pre;
@@ -65,18 +85,17 @@
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
-    border-radius: 0.3em;
+    border-radius: var(--radius);
   }
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    /* background: #2e3440; */
-    /* background: hsl(0 0% 8%); */
-    background-image: linear-gradient(
-      to top left,
-      hsl(var(--background)) 0%,
-      hsl(var(--muted)) 100%
+    background: linear-gradient(
+      160deg,
+      var(--poimandres-bg-dark) 0%,
+      var(--poimandres-bg-medium) 100%
     );
+    border: 1px solid var(--poimandres-border);
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
@@ -85,10 +104,11 @@
   :not(pre) > code {
     font-size: 0.9em;
     padding-inline: 0.2em;
-    border-radius: 0.3em;
+    border-radius: calc(var(--radius) * 0.5);
     white-space: normal;
-    background: hsl(var(--muted));
-    border: 1px solid hsl(var(--border));
+    background: var(--poimandres-bg-dark);
+    border: 1px solid var(--poimandres-border);
+    color: var(--poimandres-text-primary);
     @apply break-words;
   }
 
@@ -98,15 +118,16 @@
     padding-right: 1rem;
   }
 
+  /* Token colors using Poimandres variables */
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: #636f88;
+    color: var(--poimandres-text-muted);
   }
 
   .token.punctuation {
-    color: #81a1c1;
+    color: var(--poimandres-text-subtle);
   }
 
   .namespace {
@@ -118,15 +139,15 @@
   .token.constant,
   .token.symbol,
   .token.deleted {
-    color: #81a1c1;
+    color: var(--poimandres-teal);
   }
 
   .token.number {
-    color: #b48ead;
+    color: var(--poimandres-pink);
   }
 
   .token.boolean {
-    color: #81a1c1;
+    color: var(--poimandres-teal);
   }
 
   .token.selector,
@@ -135,7 +156,7 @@
   .token.char,
   .token.builtin,
   .token.inserted {
-    color: #a3be8c;
+    color: var(--poimandres-light-blue);
   }
 
   .token.operator,
@@ -144,23 +165,23 @@
   .language-css .token.string,
   .style .token.string,
   .token.variable {
-    color: #81a1c1;
+    color: var(--poimandres-blue);
   }
 
   .token.atrule,
   .token.attr-value,
   .token.function,
   .token.class-name {
-    color: #88c0d0;
+    color: var(--poimandres-blue);
   }
 
   .token.keyword {
-    color: #81a1c1;
+    color: var(--poimandres-blue-green);
   }
 
   .token.regex,
   .token.important {
-    color: #ebcb8b;
+    color: var(--poimandres-purple);
   }
 
   .token.important,
@@ -174,5 +195,32 @@
 
   .token.entity {
     cursor: help;
+  }
+
+  /* Hide scrollbar but maintain functionality */
+  pre[class*="language-"]::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Line highlighting */
+  .line-highlight {
+    background: rgba(153, 187, 255, 0.1);
+    border-left: 3px solid var(--poimandres-blue-green);
+  }
+
+  /* Add subtle animation for hover effects */
+  pre[class*="language-"]:hover {
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(136, 178, 244, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Add a subtle accent glow to selected tokens on hover */
+  .token.function:hover,
+  .token.keyword:hover,
+  .token.string:hover {
+    text-shadow: 0 0 8px rgba(115, 210, 222, 0.3);
+    transition: all 0.2s ease;
   }
 }

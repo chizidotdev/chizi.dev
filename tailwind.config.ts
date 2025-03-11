@@ -4,15 +4,13 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-
   content: ["./src/**/*.{html,js,svelte,ts}"],
-
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: "1rem",
       screens: {
-        "2xl": "580px",
+        "2xl": "620px",
       },
     },
     extend: {
