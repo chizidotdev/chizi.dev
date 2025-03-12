@@ -23,11 +23,15 @@
     <Heading variant="h3">{description}</Heading>
   </div>
 
-  <div class="mt-10 space-y-6">
+  <div class="mt-10 space-y-8">
     {#each snippets as snippet}
-      <a href={`/snippets/${snippet.slug}`} class="block">
+      <a href={`/snippets/${snippet.slug}`} class="group block">
         <Paragraph>
-          {snippet.description}<MoveUpRight class="mb-1.5 inline" size={12} />
+          {snippet.description}
+          <MoveUpRight
+            class="mb-1.5 inline transition group-hover:translate-x-1 group-hover:rotate-45"
+            size={12}
+          />
         </Paragraph>
         <Paragraph class="text-sm text-muted-foreground">
           {formatDate(snippet.date, "MMM YYYY")}
