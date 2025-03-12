@@ -5,6 +5,6 @@
   const { children, class: className, ...props }: HTMLAttributes<HTMLParagraphElement> = $props();
 </script>
 
-<p class={cn("leading-6", className)} {...props}>
+<p class={cn("leading-6 tracking-tight", className)} {...props}>
   {@render children?.()}
 </p>
