@@ -11,7 +11,7 @@
   const navItems = [
     { title: "Work", href: "/", pathRegex: /\/$/ },
     { title: "Snippets", href: "/snippets", pathRegex: /\/snippets/ },
-    { title: "Resume", href: "/resume", pathRegex: /\/resume/ },
+    { title: "Now", href: "/now", pathRegex: /\/now/ },
   ];
 </script>
 

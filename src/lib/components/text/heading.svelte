@@ -11,7 +11,7 @@
       variant: {
         h1: "text-xl font-medium first:mt-0",
         h2: "text-lg font-medium",
-        h3: "text-lg font-serif italic text-muted-foreground",
+        h3: "font-serif italic text-muted-foreground",
       },
     },
     defaultVariants: {

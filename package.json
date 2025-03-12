@@ -29,6 +29,7 @@
     "vite": "^6.0.3"
   },
   "dependencies": {
+    "@fontsource-variable/fraunces": "^5.2.5",
     "@fontsource-variable/jetbrains-mono": "^5.1.1",
     "@fontsource-variable/newsreader": "^5.1.0",
     "@tailwindcss/container-queries": "^0.1.1",

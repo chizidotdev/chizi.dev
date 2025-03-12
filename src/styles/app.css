@@ -1,6 +1,5 @@
 @import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource-variable/newsreader/opsz-italic.css";
-@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader";
 
 @import url("./markdown.css");
 
@@ -71,6 +70,7 @@
     @apply border-border;
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--border)) transparent;
+    scrollbar-gutter: stable;
   }
 
   html {
