@@ -5,20 +5,20 @@
   import { page } from "$app/stores";
   import { Avatar } from "$lib/components/avatar";
   import { Heading, Paragraph } from "$lib/components/text";
-  import { ThemeToggle } from "$lib/components/theme-toggle";
   import { cn } from "$lib/utils";
+  import Clock from "./clock.svelte";
 
   const navItems = [
     { title: "Work", href: "/", pathRegex: /\/$/ },
     { title: "Snippets", href: "/snippets", pathRegex: /\/snippets/ },
-    { title: "Resume", href: "/resume", pathRegex: /\/resume/ },
+    { title: "Now", href: "/now", pathRegex: /\/now/ },
   ];
 </script>
 
 <header class="container mt-24 space-y-6">
   <section class="flex items-center justify-between gap-2">
     <Avatar class="size-14 sm:size-20" />
-    <ThemeToggle />
+    <Clock />
   </section>
 
   <div class="space-y-2">

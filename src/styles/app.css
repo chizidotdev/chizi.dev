@@ -1,6 +1,5 @@
 @import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource-variable/newsreader/opsz-italic.css";
-@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader";
 
 @import url("./markdown.css");
 
@@ -30,9 +29,9 @@
   --popover-foreground: 222.2 84% 4.9%;
   --primary: 221.2 83.2% 53.3%;
   --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
+  --secondary: 210 40% 88.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 20% 92.1%;
+  --muted: 210 20% 93.1%;
   --muted-foreground: 215.4 16.3% 40.9%;
   --accent: 210 40% 93.1%;
   --accent-foreground: 222.2 47.4% 11.2%;
@@ -69,6 +68,9 @@
 @layer base {
   * {
     @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+    scrollbar-gutter: stable;
   }
 
   html {
