@@ -7,6 +7,7 @@
   import { Heading, Paragraph } from "$lib/components/text";
   import { cn } from "$lib/utils";
   import Clock from "./clock.svelte";
+  import Contact from "./contact.svelte";
 
   const navItems = [
     { title: "Work", href: "/", pathRegex: /\/$/ },
@@ -27,6 +28,7 @@
     <Paragraph class="text-muted-foreground">
       {appConfig.description}
       Based in Port Harcourt, Nigeria. Building my own ideas, helping you launch yours.
+      <Contact />
     </Paragraph>
   </div>
 </header>

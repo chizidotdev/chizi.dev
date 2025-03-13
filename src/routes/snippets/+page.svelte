@@ -29,7 +29,7 @@
         <Paragraph>
           {snippet.description}
           <MoveUpRight
-            class="mb-1.5 inline transition group-hover:translate-x-1 group-hover:rotate-45"
+            class="mb-1.5 inline transition group-hover:-translate-x-0.5 group-hover:translate-y-0.5"
             size={12}
           />
         </Paragraph>

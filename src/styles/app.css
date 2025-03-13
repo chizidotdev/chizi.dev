@@ -31,8 +31,8 @@
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 88.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 20% 93.1%;
-  --muted-foreground: 215.4 16.3% 40.9%;
+  --muted: 210 20% 94.1%;
+  --muted-foreground: 215.4 16.3% 44.9%;
   --accent: 210 40% 93.1%;
   --accent-foreground: 222.2 47.4% 11.2%;
   --destructive: 0 84.2% 60.2%;
@@ -46,16 +46,16 @@
 .dark {
   --background: 220 13% 8%;
   --foreground: 210 6% 93%;
-  --card: 220 14% 10%;
+  --card: 220 14% 8%;
   --card-foreground: 210 6% 93%;
-  --popover: 220 14% 10%;
+  --popover: 220 14% 8%;
   --popover-foreground: 210 6% 93%;
   --primary: 221.2 83.2% 53.3%;
   --primary-foreground: 210 40% 98%;
   --secondary: 215 8% 20%;
   --secondary-foreground: 210 6% 93%;
   --muted: 215 12% 14%;
-  --muted-foreground: 220 8% 60%;
+  --muted-foreground: 220 8% 64%;
   --accent: 212 12% 22%;
   --accent-foreground: 210 6% 93%;
   --destructive: 0 65% 52%;
@@ -89,7 +89,8 @@
 
 @layer utilities {
   .link {
-    @apply underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground;
+    @apply relative inline rounded p-0.5;
+    @apply after:absolute after:inset-x-0 after:bottom-[10%] after:-z-10 after:h-px after:w-full after:rounded after:bg-border after:transition-all hover:after:h-[80%] hover:after:bg-accent;
   }
 }
 
