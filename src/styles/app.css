@@ -1,5 +1,5 @@
 @import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/fraunces";
 
 @import url("./markdown.css");
 
@@ -17,7 +17,7 @@
 
 :root {
   --font-mono: "JetBrains Mono Variable", monospace;
-  --font-serif: "Newsreader Variable", serif;
+  --font-serif: "Fraunces Variable", serif;
   --font-sans: "InterVariable", sans-serif;
   font-optical-sizing: auto;
 
