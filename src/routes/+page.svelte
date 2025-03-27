@@ -43,3 +43,5 @@
     </div>
   {/each}
 </section>
+
+<Paragraph class="text-center text-sm text-muted-foreground">Case studies soon.</Paragraph>
