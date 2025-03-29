@@ -4,7 +4,7 @@
   h1,
   h2,
   h3 {
-    @apply mt-8 scroll-m-20 font-serif tracking-tight;
+    @apply mt-8 scroll-m-20 tracking-tight;
   }
 
   h1 {

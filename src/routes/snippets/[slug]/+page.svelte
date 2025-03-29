@@ -24,7 +24,7 @@
     <Paragraph class=" text-sm text-muted-foreground">
       {formatDate(new Date(data.meta.date), "MMM DD, YYYY")}
     </Paragraph>
-    <Heading class=" font-serif">
+    <Heading>
       {data.meta.title}
     </Heading>
     <Paragraph class="">{data.meta.description}</Paragraph>

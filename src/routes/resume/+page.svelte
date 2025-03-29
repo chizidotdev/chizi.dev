@@ -19,7 +19,7 @@
 <!-- <Heading variant="h3" class="mb-10">{description}</Heading> -->
 
 <div>
-  <Heading class="font-serif">Pioneering Programmers</Heading>
+  <Heading>Pioneering Programmers</Heading>
   <Paragraph class="mb-4">Senior Frontend Engineer, 2022 - 2024</Paragraph>
   <div class=" text-muted-foreground">
     <PioneeringProgrammers />
@@ -37,7 +37,7 @@
 <!-- </div> -->
 
 <div>
-  <Heading class="font-serif">Cyte Technologies</Heading>
+  <Heading>Cyte Technologies</Heading>
   <Paragraph class="mb-4">Frontend Developer, 2021 - 2022</Paragraph>
   <div class=" text-muted-foreground">
     <CyteCode />

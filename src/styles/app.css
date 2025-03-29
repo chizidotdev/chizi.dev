@@ -1,15 +1,7 @@
 @import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/newsreader";
 
 @import url("./markdown.css");
-
-@font-face {
-  font-family: InterVariable;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/fonts/InterVariable.woff2") format("woff2");
-}
 
 @tailwind base;
 @tailwind components;
@@ -17,8 +9,7 @@
 
 :root {
   --font-mono: "JetBrains Mono Variable", monospace;
-  --font-serif: "Fraunces Variable", serif;
-  --font-sans: "InterVariable", sans-serif;
+  --font-base: "Newsreader Variable", serif;
   font-optical-sizing: auto;
 
   --background: 0 0% 97%;
@@ -79,7 +70,7 @@
   }
 
   body {
-    @apply flex min-h-[90dvh] flex-col bg-background font-sans text-foreground;
+    @apply flex min-h-[90dvh] flex-col bg-background font-base text-foreground;
   }
 
   svg {
@@ -90,7 +81,7 @@
 @layer utilities {
   .link {
     @apply relative inline rounded p-0.5;
-    @apply after:absolute after:inset-x-0 after:bottom-[10%] after:-z-10 after:h-px after:w-full after:rounded after:bg-border after:transition-all hover:after:h-[80%] hover:after:bg-accent;
+    @apply after:absolute after:inset-x-0 after:bottom-[10%] after:-z-10 after:h-px after:w-full after:rounded after:bg-border after:transition-all hover:after:h-[90%] hover:after:bg-accent;
   }
 }
 

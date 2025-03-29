@@ -15,8 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: "var(--font-sans)",
-        serif: "var(--font-serif)",
+        base: "var(--font-base)",
         mono: "var(--font-mono)",
       },
       fontSize: {
