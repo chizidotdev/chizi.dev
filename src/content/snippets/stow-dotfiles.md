@@ -12,23 +12,23 @@ Ensure stow is installed. Using apt, it can be installed with...
 sudo apt install -y stow
 ```
 
-### Workflow
-
-In the root dir of the .dotfiles repo, to see changes before applying the symlinks, run
+### Basic Workflow
 
 ```sh
 # In the root dir of the .dotfiles repo
 # to see changes before applying the symlinks, run
 stow --adopt -nvt ~ *
+```
 
-# Remove the -n flag to apply the symlinks
+Remove the -n flag to apply the symlinks
+```sh
 stow --adopt -vt ~ *
 
 # To remove the symlinks, add the -D flag
 stow --adopt -vDt ~ *
 ```
 
-Optionally, I like to set the verbose level to 2 so I can see more info about the process.
+Optionally, you can increase verbose level to see more info about the process.
 
 ```sh
 stow --adopt --verbose=2 -t ~ *
