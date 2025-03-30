@@ -9,7 +9,7 @@
 </svelte:head>
 
 <section>
-  <Heading variant="h3" class="text-muted-foreground">Last updated on Mar 12, 2025.</Heading>
+  <Heading variant="h3">Last updated on Mar 12, 2025.</Heading>
 
   <div class="mt-6 space-y-4">
     <Paragraph>Spending way too much time tinkering with this site.</Paragraph>

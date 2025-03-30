@@ -16,8 +16,6 @@
   <meta property="og:type" content="article" />
 </svelte:head>
 
-<!-- <Heading variant="h3" class="mb-10">{description}</Heading> -->
-
 <div>
   <Heading>Pioneering Programmers</Heading>
   <Paragraph class="mb-4">Senior Frontend Engineer, 2022 - 2024</Paragraph>
@@ -29,7 +27,7 @@
 <div class="border-b"></div>
 
 <!-- <div class="border-t py-6"> -->
-<!--   <Text variant="h3">Aidmedium</Text> -->
+<!--   <Text>Aidmedium</Text> -->
 <!--   <Text label class="mb-4">Full Stack Developer, 2021 - 2022</Text> -->
 <!--   <div class="text-muted-foreground"> -->
 <!--     <Aidmedium /> -->

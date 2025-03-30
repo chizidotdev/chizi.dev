@@ -19,7 +19,7 @@
 >
   <div class="handle h-1/4 w-0.5 rotate-[calc(var(--hour)*1deg)] bg-muted-foreground"></div>
   <div class="handle h-1/3 w-0.5 rotate-[calc(var(--minute)*1deg)] bg-muted-foreground/50"></div>
-  <div class="handle h-2/5 w-px rotate-[calc(var(--second)*1deg)] bg-primary/30"></div>
+  <div class="handle h-2/5 w-[0.4px] rotate-[calc(var(--second)*1deg)] bg-primary"></div>
 </div>
 
 <style>
