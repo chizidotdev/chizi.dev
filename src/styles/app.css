@@ -1,4 +1,4 @@
-@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource/ibm-plex-mono";
 @import "@fontsource-variable/newsreader";
 
 @import url("./markdown.css");
@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 :root {
-  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-mono: "IBM Plex Mono", monospace;
   --font-base: "Newsreader Variable", serif;
   font-optical-sizing: auto;
 
