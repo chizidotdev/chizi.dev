@@ -75,7 +75,7 @@
           <span class="size-2 animate-ping rounded-full bg-green-600"></span>
           <span class="size-2 rounded-full bg-green-600"></span>
         </div>
-        <Paragraph>Available Q2 2025</Paragraph>
+        <Paragraph>Available May 2025</Paragraph>
       </div>
 
       <a href="https://cal.com/aidmedium/discovery" target="_blank">
