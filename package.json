@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.2.6",
+    "@fontsource-variable/roboto-slab": "^5.2.5",
     "@fontsource/ibm-plex-mono": "^5.2.5",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.15",

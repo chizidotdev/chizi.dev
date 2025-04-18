@@ -8,7 +8,7 @@ featured: true
 
 Hook to use local storage as a realtime data store in React. Utilizes the `storage` event to listen for changes in local storage and update the react state accordingly.
 
-```ts
+```tsx
 import { Dispatch, SetStateAction, useState } from "react";
 
 /**
@@ -66,5 +66,25 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, Dispatch<S
   };
 
   return [state, setValue];
+}
+```
+
+Some advanced caching utilities for a cleaner cache interface.
+
+```tsx
+const FILTER_KEY = "__FILTER_CACHE";
+function getStore() {
+  const filters = window.localStorage.getItem(FILTER_KEY);
+  if (!filters) return null;
+  return JSON.parse(filters);
+}
+function getItem(key: string) {
+  const s = getStore();
+  return s?.[key];
+}
+function setItem<T>(key: string, value: T) {
+  const s = getStore() ?? {};
+  const filters = { ...s, [key]: value };
+  window.localStorage.setItem(FILTER_KEY, JSON.stringify(filters));
 }
 ```

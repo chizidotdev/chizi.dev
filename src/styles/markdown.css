@@ -59,6 +59,12 @@
   --poimandres-purple: #d4bfff;
   --poimandres-pink: #df95be;
 
+  /* Git diff colors */
+  --git-diff-added: #203221;
+  --git-diff-added-highlight: #28a745;
+  --git-diff-removed: #2f232b;
+  --git-diff-removed-highlight: #f85149;
+
   code[class*="language-"],
   pre[class*="language-"] {
     font-family: var(--font-mono);
@@ -222,5 +228,34 @@
   .token.string:hover {
     text-shadow: 0 0 8px rgba(115, 210, 222, 0.3);
     transition: all 0.2s ease;
+  }
+
+  /* Style for added lines (start with +) */
+  .language-diff .token.inserted,
+  .language-diff .token.inserted .token {
+    color: var(--git-diff-added-highlight);
+    background-color: var(--git-diff-added);
+  }
+
+  /* Style for removed lines (start with -) */
+  .language-diff .token.deleted,
+  .language-diff .token.deleted .token {
+    color: var(--git-diff-removed-highlight);
+    background-color: var(--git-diff-removed);
+  }
+
+  /* Fix for diff markup symbols (+ and -) */
+  .language-diff .token.prefix.inserted,
+  .language-diff .token.prefix.deleted {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Make the + and - symbols more prominent */
+  .language-diff .token.prefix.inserted,
+  .language-diff .token.prefix.deleted {
+    background-color: rgba(0, 0, 0, 0);
+    color: inherit;
+    font-weight: bold;
   }
 }

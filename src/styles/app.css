@@ -1,5 +1,5 @@
 @import "@fontsource/ibm-plex-mono";
-@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/roboto-slab";
 
 @import url("./markdown.css");
 
@@ -9,7 +9,7 @@
 
 :root {
   --font-mono: "IBM Plex Mono", monospace;
-  --font-base: "Newsreader Variable", serif;
+  --font-base: "Roboto Slab Variable", serif;
   font-optical-sizing: auto;
 
   --background: 0 0% 97%;

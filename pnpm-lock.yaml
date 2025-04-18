@@ -11,6 +11,9 @@ importers:
       '@fontsource-variable/newsreader':
         specifier: ^5.2.6
         version: 5.2.6
+      '@fontsource-variable/roboto-slab':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource/ibm-plex-mono':
         specifier: ^5.2.5
         version: 5.2.5
@@ -259,6 +262,9 @@ packages:
 
   '@fontsource-variable/newsreader@5.2.6':
     resolution: {integrity: sha512-FeYF9/TNdgLubdk7rqtwaIDk9Y2CJQC9Vrup+hDiO/POqprtq7US0qSZw7IoLVFcGw+bTGYvPSdVMmSsrPFJhw==}
+
+  '@fontsource-variable/roboto-slab@5.2.5':
+    resolution: {integrity: sha512-q8dTQbL6/OMoMpWv2HCPfVZCkl6qWWS0z78k7HaJgNfL3ywwCg6np8Le50Nad2eWQO20t6zWkRZ/KJuJ2FaDAA==}
 
   '@fontsource/ibm-plex-mono@5.2.5':
     resolution: {integrity: sha512-G09N3GfuT9qj3Ax2FDZvKqZttzM3v+cco2l8uXamhKyXLdmlaUDH5o88/C3vtTHj2oT7yRKsvxz9F+BXbWKMYA==}
@@ -1370,6 +1376,8 @@ snapshots:
   '@floating-ui/utils@0.2.9': {}
 
   '@fontsource-variable/newsreader@5.2.6': {}
+
+  '@fontsource-variable/roboto-slab@5.2.5': {}
 
   '@fontsource/ibm-plex-mono@5.2.5': {}
 
