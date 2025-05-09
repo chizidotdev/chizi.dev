@@ -10,7 +10,7 @@
   import Contact from "./contact.svelte";
 
   const navItems = [
-    { title: "Work", href: "/", pathRegex: /\/$/ },
+    // { title: "Work", href: "/", pathRegex: /\/$/ },
     { title: "Snippets", href: "/snippets", pathRegex: /\/snippets/ },
     { title: "Now", href: "/now", pathRegex: /\/now/ },
   ];
