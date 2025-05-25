@@ -1,0 +1,7 @@
+---
+const { children, markDef } = Astro.props.node;
+---
+
+<a class="link" target="_blank" href={markDef.href}>
+  {children.map((c: any) => c.text)}
+</a>

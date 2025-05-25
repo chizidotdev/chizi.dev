@@ -1,11 +1,14 @@
 ---
 import { PortableText as PortableTextInternal } from "astro-portabletext";
 import PortableTextImage from "./portable-text-image.astro";
+import PortableTextLink from "./portable-text-link.astro";
+import type { PortableTextComponents } from "astro-portabletext/types";
 
 const { portableText } = Astro.props;
 
-const components = {
+const components: Partial<PortableTextComponents> = {
   type: { image: PortableTextImage },
+  mark: { link: PortableTextLink },
 };
 ---
 
