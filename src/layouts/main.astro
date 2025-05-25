@@ -1,6 +1,10 @@
 ---
 import "@/styles/global.css";
+import Clock from "@/components/clock.svelte";
+
 const { content } = Astro.props;
+
+const size = 16;
 ---
 
 <html lang="en">
@@ -10,7 +14,23 @@ const { content } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{content.title}</title>
   </head>
-  <body class="container">
-    <slot />
+  <body>
+    <div class="container flex flex-col gap-10 py-6">
+      <header class="flex items-center-safe justify-between">
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="50" cy="50" r="50" fill="#121212"></circle>
+        </svg>
+
+        <Clock client:load />
+      </header>
+
+      <slot />
+    </div>
   </body>
 </html>
