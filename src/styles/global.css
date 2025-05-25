@@ -44,7 +44,7 @@
   --secondary: hsl(210 25% 7.8431%);
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(240 1.9608% 90%);
-  --muted-foreground: hsl(210 25% 7.8431%);
+  --muted-foreground: hsl(210 25% 32.8431%);
   --accent: hsl(211.5789 51.3514% 92.7451%);
   --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
   --border: hsl(201.4286 30.4348% 90.9804%);
@@ -72,7 +72,7 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 0.75rem;
-  @media (width >= 1440px) {
-    max-width: 1440px;
+  @media (width >= 1600px) {
+    max-width: 1600px;
   }
 }

@@ -1,7 +1,15 @@
 ---
 import "@/styles/global.css";
 import Clock from "@/components/clock.svelte";
+import { Heading } from "@/components/ui/text";
 
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
 const size = 16;
 ---
 
@@ -10,20 +18,24 @@ const size = 16;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Chizi Victor</title>
+    <title>{pageTitle}</title>
   </head>
+
   <body>
-    <div class="container flex flex-col gap-10 py-6">
+    <div class="container flex flex-col gap-20 pt-6 pb-16">
       <header class="flex items-center-safe justify-between">
-        <svg
-          width={size}
-          height={size}
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="50" cy="50" r="50" fill="#121212"></circle>
-        </svg>
+        <a href="/" class="flex items-center gap-2">
+          <svg
+            width={size}
+            height={size}
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="50" cy="50" r="50" fill="#121212"></circle>
+          </svg>
+          {!!title && <Heading variant="h4">. &nbsp; {title}</Heading>}
+        </a>
 
         <Clock client:load />
       </header>

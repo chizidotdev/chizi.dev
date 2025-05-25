@@ -9,34 +9,24 @@ export const projectType = defineType({
       type: "string",
     }),
     defineField({
-      name: "slug",
-      type: "slug",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      name: "description",
+      type: "text",
     }),
     defineField({
-      name: "mainImage",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
+      name: "images",
+      type: "array",
+      of: [
         {
-          name: "alt",
-          type: "string",
-          title: "Alternative Text",
+          name: "projectImage",
+          type: "image",
+          options: { hotspot: true },
+          fields: [{ name: "alt", type: "string", title: "Alt Text" }],
         },
       ],
     }),
     defineField({
       name: "publishedAt",
       type: "datetime",
-    }),
-    defineField({
-      name: "body",
-      type: "blockContent",
     }),
   ],
 
