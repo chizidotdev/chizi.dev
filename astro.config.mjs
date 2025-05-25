@@ -1,10 +1,10 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
-
 import svelte from "@astrojs/svelte";
+import sanity from "@sanity/astro";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,5 +12,16 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), svelte()],
+  integrations: [
+    react(),
+    svelte(),
+    sanity({
+      projectId: "y8i6z8w9",
+      dataset: "production",
+      useCdn: false,
+      apiVersion: "2025-01-28",
+      studioBasePath: "/studio",
+    }),
+  ],
 });
+
