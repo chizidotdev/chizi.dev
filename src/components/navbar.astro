@@ -1,0 +1,16 @@
+---
+const navItems = [
+  { title: "Projects", href: "/projects" },
+  { title: "Snippets", href: "#" },
+];
+---
+
+<nav class="flex gap-5">
+  {
+    navItems.map((item) => (
+      <a href={item.href} class="link">
+        {item.title}
+      </a>
+    ))
+  }
+</nav>

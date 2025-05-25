@@ -15,7 +15,7 @@
   style:--minute={`calc((${min}/60) * 360)`}
   style:--second={`calc((${sec}/60) * 360)`}
   style:--width="2px"
-  class="relative flex size-12 rotate-180 items-center justify-center after:z-10 after:size-[5%] after:rounded-full after:bg-background sm:size-12 after:border-[0.5px]"
+  class="relative flex size-14 rounded-full rotate-180 items-center justify-center after:z-10 after:size-[5%] after:rounded-full after:bg-background sm:size-12 after:border-[0.5px]"
 >
   <div class="handle h-1/4 w-0.5 rotate-[calc(var(--hour)*1deg)] bg-muted-foreground"></div>
   <div class="handle h-1/3 w-0.5 rotate-[calc(var(--minute)*1deg)] bg-muted-foreground/50"></div>

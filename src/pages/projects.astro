@@ -4,29 +4,32 @@ import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
 import { urlForImage } from "@/sanity/lib/url-for-image";
 import type { SanityDocument } from "@sanity/client";
+import { Image } from "astro:assets";
 
 const { data: projects } = await loadQuery<SanityDocument[]>({
-  query: `*[_type == "project"]`,
+  query: `*[_type == "project"] | order(_createdAt)`,
 });
 ---
 
 <MainLayout title="Projects">
-  {
-    projects.map((project) => (
-      <div class="relative grid gap-6 md:grid-cols-[1fr_2fr]">
-        <div class="top-6 h-fit md:sticky">
-          <Heading variant="h4">{project.title}</Heading>
-          <Paragraph className="text-muted-foreground">{project.description}</Paragraph>
-        </div>
+  <div class="container flex flex-col gap-20">
+    {
+      projects.map((project) => (
+        <div class="relative grid gap-6 md:grid-cols-[1fr_2fr]">
+          <div class="top-6 h-fit md:sticky">
+            <Heading variant="h4">{project.title}</Heading>
+            <Paragraph className="text-muted-foreground">{project.description}</Paragraph>
+          </div>
 
-        <div class="space-y-2">
-          {project.images.map((image: SanityDocument) => (
-            <img src={urlForImage(image).url()} class="rounded-md" />
-          ))}
+          <div class="space-y-2">
+            {project.images.map((image: SanityDocument) => (
+              <Image inferSize src={urlForImage(image).url()} alt={image.alt} class="rounded-md" />
+            ))}
+          </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 
   <div class="flex flex-col items-center">
     <Paragraph>You've reached the end</Paragraph>

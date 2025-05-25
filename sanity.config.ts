@@ -1,11 +1,12 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
+import { structure } from "@/sanity/desk-structure";
 import { schema } from "@/sanity/schema-types";
 
 export default defineConfig({
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
   dataset: import.meta.env.PUBLIC_SANITY_DATASET,
-  plugins: [structureTool()],
+  plugins: [structureTool({ structure })],
   schema,
 });

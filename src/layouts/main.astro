@@ -22,7 +22,7 @@ const size = 16;
   </head>
 
   <body>
-    <div class="container flex flex-col gap-20 pt-6 pb-16">
+    <div class="flex min-h-dvh flex-col gap-20 px-6 pt-6 pb-16">
       <header class="flex items-center-safe justify-between">
         <a href="/" class="flex items-center gap-2">
           <svg
@@ -34,6 +34,7 @@ const size = 16;
           >
             <circle cx="50" cy="50" r="50" fill="#121212"></circle>
           </svg>
+          <span class="sr-only">Chizi Victor</span>
           {!!title && <Heading variant="h4">. &nbsp; {title}</Heading>}
         </a>
 
