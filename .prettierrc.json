@@ -1,0 +1,29 @@
+{
+  "trailingComma": "es5",
+  "semi": true,
+  "tabWidth": 2,
+  "singleQuote": false,
+  "printWidth": 100,
+  "importOrder": [
+    "^(astro/?([a-zA-Z/]*))$",
+    "<THIRD_PARTY_MODULES>",
+    "^@lib/(.*)$",
+    "^@(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}
