@@ -1,16 +1,5 @@
 import { defineArrayMember, defineType } from "sanity";
 
-/**
- * This is the schema type for block content used in the post document type
- * Importing this type into the studio configuration's `schema` property
- * lets you reuse it in other document types with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
-
 export const blockContentType = defineType({
   title: "Block Content",
   name: "blockContent",
@@ -59,6 +48,7 @@ export const blockContentType = defineType({
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+    defineArrayMember({ type: "code" }),
     defineArrayMember({
       type: "image",
       options: { hotspot: true },
