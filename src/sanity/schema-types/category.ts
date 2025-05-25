@@ -10,6 +10,11 @@ export const categoryType = defineType({
       type: "string",
     }),
     defineField({
+      name: "slug",
+      type: "slug",
+      options: { source: "title", maxLength: 96 },
+    }),
+    defineField({
       name: "description",
       type: "text",
     }),

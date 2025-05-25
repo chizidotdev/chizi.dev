@@ -1,0 +1,37 @@
+---
+import { Paragraph } from "@/components/ui/text";
+import { formatDate } from "@/lib/utils";
+import MainLayout from "@/layouts/main.astro";
+import { loadQuery } from "@/sanity/lib/load-query";
+import type { SanityDocument } from "@sanity/client";
+
+const { data: snippetCategory } = await loadQuery<SanityDocument>({
+  query: `*[_type == "category" && slug.current == "snippets"][0]`,
+});
+
+const { data: snippets } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "post" && category._ref == $categoryId] {..., "slug": slug.current}`,
+  params: { categoryId: snippetCategory._id },
+});
+---
+
+<MainLayout title={snippetCategory.title}>
+  <div class="container flex flex-col gap-20">
+    <div class="space-y-2">
+      <Paragraph>{snippetCategory.description}</Paragraph>
+    </div>
+
+    <div class="mt-10 space-y-8">
+      {
+        snippets.map((snippet) => (
+          <a href={`/snippets/${snippet.slug}`} class="group block">
+            <Paragraph>{snippet.description}</Paragraph>
+            <Paragraph className="text-sm text-muted-foreground">
+              {formatDate(snippet.date)}
+            </Paragraph>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

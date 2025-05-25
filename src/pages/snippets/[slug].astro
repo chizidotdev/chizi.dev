@@ -1,0 +1,53 @@
+---
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "@/sanity/lib/load-query";
+import MainLayout from "@/layouts/main.astro";
+import { Heading, Paragraph } from "@/components/ui/text";
+import { formatDate } from "@/lib/utils";
+import PortableText from "@/components/portable-text.astro";
+import { Contact } from "@/components/contact";
+
+export async function getStaticPaths() {
+  const { data: snippets } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post" && category->slug.current == "snippets"]`,
+  });
+
+  return snippets.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+
+const { data: post } = await loadQuery<SanityDocument>({
+  query: `*[_type == "post" && slug.current == $slug][0] {..., "category": category->title}`,
+  params,
+});
+
+console.log(post);
+---
+
+<MainLayout title={post.category}>
+  <article class="container flex flex-col gap-10">
+    <hgroup class="space-y-1">
+      <Paragraph className="text-muted-foreground text-sm">
+        {formatDate(new Date(post._createdAt))}
+      </Paragraph>
+      <Heading>{post.title}</Heading>
+      <Paragraph className="">{post.description}</Paragraph>
+    </hgroup>
+
+    <div class="max-w-prose">
+      <!-- <PortableText portableText={post.body} /> -->
+      <Paragraph>
+        Still figuring out how to render sanity.io portabletext in Astro, it's a real pain. Until
+        then please continue browsing
+      </Paragraph>
+      <Contact client:load>Hire me</Contact>
+    </div>
+  </article>
+</MainLayout>

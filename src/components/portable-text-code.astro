@@ -1,0 +1,10 @@
+---
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nord } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
+const { code, language } = Astro.props.node; // Sanity sends `code` and `language`
+---
+
+<SyntaxHighlighter style={nord} language={language}>
+  {code}
+</SyntaxHighlighter>
