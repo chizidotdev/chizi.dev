@@ -3,13 +3,13 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("scroll-m-20 font-bold tracking-tight", {
+const headingVariants = cva("scroll-m-20 font-bold", {
   variants: {
     variant: {
       h1: "text-4xl",
       h2: "text-2xl",
       h3: "text-lg",
-      h4: "text-base font-semibold",
+      h4: "font-semibold",
     },
   },
 });
@@ -31,8 +31,8 @@ Heading.displayName = "Heading";
 const Paragraph = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  return <p className={cn("tracking-tight", className)} {...props} ref={ref} />;
+>(({ ...props }, ref) => {
+  return <p {...props} ref={ref} />;
 });
 
 Paragraph.displayName = "Paragraph";

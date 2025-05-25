@@ -1,16 +1,20 @@
 ---
+import { Contact } from "@/components/contact";
+
 const navItems = [
   { title: "Projects", href: "/projects" },
   { title: "Snippets", href: "#" },
 ];
 ---
 
-<nav class="flex gap-5">
+<nav class="mt-auto flex flex-col gap-2">
   {
     navItems.map((item) => (
-      <a href={item.href} class="link">
+      <a href={item.href} class="link w-fit">
         {item.title}
       </a>
     ))
   }
+
+  <Contact client:load>Contact</Contact>
 </nav>

@@ -1,7 +1,6 @@
 ---
 import Navbar from "@/components/navbar.astro";
 import PortableText from "@/components/portable-text.astro";
-import { Paragraph } from "@/components/ui/text";
 import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
 import type { SanityDocument } from "@sanity/client";
@@ -12,12 +11,9 @@ const { data: settings } = await loadQuery<SanityDocument>({
 ---
 
 <MainLayout>
-  <div class="mt-auto flex flex-col items-end justify-between gap-10 md:flex-row-reverse">
-    <Navbar />
-
-    <div class="max-w-screen-sm">
-      <PortableText portableText={settings.about} />
-      <Paragraph>Hire me</Paragraph>
-    </div>
+  <div class="max-w-screen-sm">
+    <PortableText portableText={settings.about} />
   </div>
+
+  <Navbar />
 </MainLayout>
