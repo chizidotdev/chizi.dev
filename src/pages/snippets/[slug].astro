@@ -5,7 +5,6 @@ import MainLayout from "@/layouts/main.astro";
 import { Heading, Paragraph } from "@/components/ui/text";
 import { formatDate } from "@/lib/utils";
 import PortableText from "@/components/portable-text.astro";
-import { Contact } from "@/components/contact";
 
 export async function getStaticPaths() {
   const { data: snippets } = await loadQuery<SanityDocument[]>({
@@ -27,8 +26,6 @@ const { data: post } = await loadQuery<SanityDocument>({
   query: `*[_type == "post" && slug.current == $slug][0] {..., "category": category->title}`,
   params,
 });
-
-console.log(post);
 ---
 
 <MainLayout title={post.category}>
@@ -42,12 +39,7 @@ console.log(post);
     </hgroup>
 
     <div class="max-w-prose">
-      <!-- <PortableText portableText={post.body} /> -->
-      <Paragraph>
-        Still figuring out how to render sanity.io portabletext in Astro, it's a real pain. Until
-        then please continue browsing
-      </Paragraph>
-      <Contact client:load>Hire me</Contact>
+      <PortableText portableText={post.body} />
     </div>
   </article>
 </MainLayout>
