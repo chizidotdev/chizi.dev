@@ -1,0 +1,27 @@
+---
+const GOOGLE_TAG_ID = "G-WGPRFZV0DS";
+---
+
+<!-- Google Analytics -->
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+></script>
+<script is:inline define:vars={{ GOOGLE_TAG_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", GOOGLE_TAG_ID);
+</script>
+
+<script>
+  // Track page views on client-side navigation (if using View Transitions or similar)
+  document.addEventListener("astro:page-load", () => {
+    if (typeof gtag !== "undefined") {
+      gtag("config", "G-WGPRFZV0DS", {
+        page_title: document.title,
+        page_path: window.location.pathname,
+      });
+    }
+  });
+</script>
