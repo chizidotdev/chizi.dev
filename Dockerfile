@@ -1,22 +1,29 @@
-FROM node:21-alpine AS builder
+FROM node:lts AS base
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml* ./
+
+FROM base AS prod-deps
 RUN npm i -g pnpm && pnpm i --frozen-lockfile;
+
+FROM base AS build-deps
+RUN npm i -g pnpm && pnpm i --frozen-lockfile;
+
+FROM build-deps AS build
+COPY . .
 
 ARG PUBLIC_SANITY_PROJECT_ID
 ARG PUBLIC_SANITY_DATASET
+ENV HOST=0.0.0.0
+ENV PORT=4321
 
-COPY . .
-RUN pnpm run build
+RUN npm run build
 
-# Adapter node
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=builder /app/dist dist/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
-EXPOSE 3000
-ENV NODE_ENV=production
-CMD [ "node", "dist/server/entry.mjs" ]
+FROM base AS runtime
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
 
+ENV HOST=0.0.0.0
+ENV PORT=4321
+EXPOSE 4321
+CMD node ./dist/server/entry.mjs
