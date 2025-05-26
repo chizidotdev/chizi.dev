@@ -1,4 +1,4 @@
-@import "@fontsource-variable/instrument-sans";
+@import "@fontsource/uncut-sans";
 @import "@fontsource/ibm-plex-mono";
 
 @import "tailwindcss";
@@ -33,11 +33,11 @@
 }
 
 :root {
-  --font-sans: "Instrument Sans Variable", sans-serif;
+  --font-sans: "Uncut Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
   --background: hsl(0 0% 100%);
-  --foreground: hsl(210 25% 7.8431%);
+  --foreground: hsl(210 25% 24.8431%);
   --card: hsl(180 6.6667% 97.0588%);
   --card-foreground: hsl(210 25% 7.8431%);
   --popover: hsl(0 0% 100%);
@@ -47,13 +47,34 @@
   --secondary: hsl(210 25% 7.8431%);
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(240 1.9608% 90%);
-  --muted-foreground: hsl(210 25% 38.8431%);
+  --muted-foreground: hsl(210 25% 43.8431%);
   --accent: hsl(211.5789 51.3514% 92.7451%);
   --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
   --border: hsl(201.4286 30.4348% 90.9804%);
   --input: hsl(200 23.0769% 97.451%);
   --ring: hsl(202.8169 89.1213% 53.1373%);
   --radius: 0.625rem;
+
+  .dark {
+    --background: hsl(210 20% 6.8431%);
+    --foreground: hsl(210 15% 90%);
+    --card: hsl(210 20% 11%);
+    --card-foreground: hsl(210 15% 92%);
+    --popover: hsl(210 25% 9%);
+    --popover-foreground: hsl(210 15% 92%);
+    --primary: hsl(210 88.2845% 58%);
+    --primary-foreground: hsl(210 25% 7.8431%);
+    --secondary: hsl(210 15% 20%);
+    --secondary-foreground: hsl(210 15% 85%);
+    --muted: hsl(210 20% 15%);
+    --muted-foreground: hsl(210 15% 75%);
+    --accent: hsl(210 25% 16%);
+    --accent-foreground: hsl(210 88.2845% 68%);
+    --border: hsl(210 20% 18%);
+    --input: hsl(210 20% 13%);
+    --ring: hsl(210 88.2845% 58%);
+    --radius: 0.625rem;
+  }
 }
 
 @layer base {

@@ -17,10 +17,10 @@ importers:
       '@astrojs/svelte':
         specifier: ^7.1.0
         version: 7.1.0(@types/node@22.15.21)(astro@5.8.0(@types/node@22.15.21)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.1)(typescript@5.8.3)(yaml@2.8.0))(jiti@2.4.2)(lightningcss@1.30.1)(svelte@5.33.1)(typescript@5.8.3)(yaml@2.8.0)
-      '@fontsource-variable/instrument-sans':
+      '@fontsource/ibm-plex-mono':
         specifier: ^5.2.5
         version: 5.2.5
-      '@fontsource/ibm-plex-mono':
+      '@fontsource/uncut-sans':
         specifier: ^5.2.5
         version: 5.2.5
       '@radix-ui/react-popover':
@@ -1033,11 +1033,11 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@fontsource-variable/instrument-sans@5.2.5':
-    resolution: {integrity: sha512-y03KXtQDL09mm8TR4gYD77FIJPht8jaPcP9cOgl5nVSbjZZrzy1koxQOQuPF4QFE0eUsSRsjYnvISIiWcj3+gA==}
-
   '@fontsource/ibm-plex-mono@5.2.5':
     resolution: {integrity: sha512-G09N3GfuT9qj3Ax2FDZvKqZttzM3v+cco2l8uXamhKyXLdmlaUDH5o88/C3vtTHj2oT7yRKsvxz9F+BXbWKMYA==}
+
+  '@fontsource/uncut-sans@5.2.5':
+    resolution: {integrity: sha512-3T4+r2JHVpPsDLMCPR9uhgIxIEyvRmP0TQKerHiUUHJqgxlGfjjOs35gXHhkrXk3sbHGIUCJ6bFx47Ttk/7kvA==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -7384,9 +7384,9 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@fontsource-variable/instrument-sans@5.2.5': {}
-
   '@fontsource/ibm-plex-mono@5.2.5': {}
+
+  '@fontsource/uncut-sans@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

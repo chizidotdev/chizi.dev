@@ -16,22 +16,20 @@ const { data: snippets } = await loadQuery<SanityDocument[]>({
 ---
 
 <MainLayout title={snippetCategory.title}>
-  <div class="container flex flex-col gap-20">
-    <div class="space-y-2">
-      <Paragraph>{snippetCategory.description}</Paragraph>
-    </div>
+  <div class="space-y-2">
+    <Paragraph>{snippetCategory.description}</Paragraph>
+  </div>
 
-    <div class="mt-10 space-y-8">
-      {
-        snippets.map((snippet) => (
-          <a href={`/snippets/${snippet.slug}`} class="group block">
-            <Paragraph>{snippet.description}</Paragraph>
-            <Paragraph className="text-sm text-muted-foreground">
-              {formatDate(snippet.date)}
-            </Paragraph>
-          </a>
-        ))
-      }
-    </div>
+  <div class="mt-10 space-y-8">
+    {
+      snippets.map((snippet) => (
+        <a href={`/snippets/${snippet.slug}`} class="group block">
+          <Paragraph>{snippet.description}</Paragraph>
+          <Paragraph className="text-sm text-muted-foreground">
+            {formatDate(snippet.date)}
+          </Paragraph>
+        </a>
+      ))
+    }
   </div>
 </MainLayout>
