@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import Clock from "@/components/clock.svelte";
 import { Heading } from "@/components/ui/text";
+import Analytics from "@/components/analytics.astro";
 
 interface Props {
   title?: string;
@@ -38,6 +39,7 @@ const size = 16;
       name="twitter:image"
       content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png"
     />
+    <Analytics />
   </head>
 
   <body>
