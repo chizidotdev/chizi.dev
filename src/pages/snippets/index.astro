@@ -20,7 +20,7 @@ const { data: snippets } = await loadQuery<SanityDocument[]>({
     <Paragraph>{snippetCategory.description}</Paragraph>
   </div>
 
-  <div class="mt-10 space-y-8">
+  <div class="space-y-8">
     {
       snippets.map((snippet) => (
         <a href={`/snippets/${snippet.slug}`} class="group block">

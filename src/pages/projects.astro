@@ -14,13 +14,13 @@ const { data: projects } = await loadQuery<SanityDocument[]>({
 <MainLayout title="Projects">
   {
     projects.map((project) => (
-      <div class="relative flex flex-col gap-6 md:flex-row-reverse">
+      <div class="relative flex flex-col gap-6 md:flex-row">
         <div class="top-20 h-fit md:sticky md:flex-1">
           <Heading variant="h4">{project.title}</Heading>
           <Paragraph className="text-muted-foreground">{project.description}</Paragraph>
         </div>
 
-        <div class="space-y-2 md:flex-2">
+        <div class="space-y-1 md:flex-2">
           {project.images.map((image: SanityDocument) => (
             <Image inferSize src={urlForImage(image).url()} alt={image.alt} class="rounded-md" />
           ))}

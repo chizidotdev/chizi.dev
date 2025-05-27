@@ -37,7 +37,7 @@
   --font-mono: "IBM Plex Mono", monospace;
 
   --background: hsl(0 0% 100%);
-  --foreground: hsl(210 25% 24.8431%);
+  --foreground: hsl(210 25% 23.8431%);
   --card: hsl(180 6.6667% 97.0588%);
   --card-foreground: hsl(210 25% 7.8431%);
   --popover: hsl(0 0% 100%);
@@ -46,8 +46,8 @@
   --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(210 25% 7.8431%);
   --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(240 1.9608% 90%);
-  --muted-foreground: hsl(210 25% 43.8431%);
+  --muted: hsl(240 1.9608% 92%);
+  --muted-foreground: hsl(210 25% 46.8431%);
   --accent: hsl(211.5789 51.3514% 92.7451%);
   --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
   --border: hsl(201.4286 30.4348% 90.9804%);

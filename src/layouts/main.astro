@@ -12,9 +12,10 @@ interface Props {
 const { title } = Astro.props;
 
 const navItems = [
+  { title: "Index", href: "/" },
   { title: "Projects", href: "/projects" },
   { title: "Snippets", href: "/snippets" },
-  { title: "Writing", href: "#" },
+  // { title: "Writing", href: "#" },
 ];
 
 const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
@@ -52,29 +53,27 @@ const size = 16;
   <body>
     <div class="flex min-h-dvh flex-col gap-20 px-6 pt-6 pb-20 2xl:px-12">
       <header class="flex items-center-safe justify-between">
-        <a href="/" class="flex items-center gap-2">
-          <svg
-            width={size}
-            height={size}
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="50" cy="50" r="50" class="fill-foreground"></circle>
-          </svg>
-          <span class="sr-only">Chizi Victor</span>
+        <div class="flex items-center gap-2">
+          <a href="/">
+            <svg
+              width={size}
+              height={size}
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="50" r="50" class="fill-foreground"></circle>
+            </svg>
+            <span class="sr-only">Chizi Victor</span>
+          </a>
           {!!title && <Heading variant="h4">. &nbsp; {title}</Heading>}
-        </a>
+        </div>
 
         <Clock client:load />
       </header>
 
-      <main class="container flex flex-1 flex-col gap-20">
-        <slot />
-      </main>
-
-      <footer class="container">
-        <nav class="mt-auto flex flex-col gap-2">
+      <div class="container">
+        <nav class="flex flex-col gap-2">
           {
             navItems.map((item) => (
               <a href={item.href} class="link w-fit">
@@ -85,7 +84,11 @@ const size = 16;
 
           <Contact client:load>Contact</Contact>
         </nav>
-      </footer>
+      </div>
+
+      <main class="container flex flex-1 flex-col gap-20">
+        <slot />
+      </main>
     </div>
   </body>
 </html>
