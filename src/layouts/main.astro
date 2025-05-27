@@ -1,14 +1,21 @@
 ---
 import "@/styles/global.css";
+import Analytics from "@/components/site-analytics.astro";
 import Clock from "@/components/clock.svelte";
 import { Heading } from "@/components/ui/text";
-import Analytics from "@/components/analytics.astro";
+import { Contact } from "@/components/contact";
 
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
+
+const navItems = [
+  { title: "Projects", href: "/projects" },
+  { title: "Snippets", href: "/snippets" },
+  { title: "Writing", href: "#" },
+];
 
 const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
 const size = 16;
@@ -65,6 +72,20 @@ const size = 16;
       <main class="container flex flex-1 flex-col gap-20">
         <slot />
       </main>
+
+      <footer class="container">
+        <nav class="mt-auto flex flex-col gap-2">
+          {
+            navItems.map((item) => (
+              <a href={item.href} class="link w-fit">
+                {item.title}
+              </a>
+            ))
+          }
+
+          <Contact client:load>Contact</Contact>
+        </nav>
+      </footer>
     </div>
   </body>
 </html>

@@ -1,5 +1,4 @@
 ---
-import Navbar from "@/components/navbar.astro";
 import PortableText from "@/components/portable-text.astro";
 import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
@@ -14,6 +13,4 @@ const { data: settings } = await loadQuery<SanityDocument>({
   <div class="max-w-screen-sm">
     <PortableText portableText={settings.about} />
   </div>
-
-  <Navbar />
 </MainLayout>

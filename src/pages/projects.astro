@@ -1,5 +1,4 @@
 ---
-import { Contact } from "@/components/contact";
 import { Heading, Paragraph } from "@/components/ui/text";
 import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
@@ -15,13 +14,13 @@ const { data: projects } = await loadQuery<SanityDocument[]>({
 <MainLayout title="Projects">
   {
     projects.map((project) => (
-      <div class="relative grid gap-6 md:grid-cols-[1fr_2fr]">
-        <div class="top-20 h-fit md:sticky">
+      <div class="relative flex flex-col gap-6 md:flex-row-reverse">
+        <div class="top-20 h-fit md:sticky md:flex-1">
           <Heading variant="h4">{project.title}</Heading>
           <Paragraph className="text-muted-foreground">{project.description}</Paragraph>
         </div>
 
-        <div class="space-y-2">
+        <div class="space-y-2 md:flex-2">
           {project.images.map((image: SanityDocument) => (
             <Image inferSize src={urlForImage(image).url()} alt={image.alt} class="rounded-md" />
           ))}
@@ -29,9 +28,4 @@ const { data: projects } = await loadQuery<SanityDocument[]>({
       </div>
     ))
   }
-
-  <div class="flex flex-col items-center">
-    <Paragraph>You've reached the end</Paragraph>
-    <Contact client:load>Contact me</Contact>
-  </div>
 </MainLayout>
