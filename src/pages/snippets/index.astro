@@ -5,28 +5,27 @@ import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
 import type { SanityDocument } from "@sanity/client";
 
-const { data: snippetCategory } = await loadQuery<SanityDocument>({
-  query: `*[_type == "category" && slug.current == "snippets"][0]`,
-});
-
 const { data: snippets } = await loadQuery<SanityDocument[]>({
-  query: `*[_type == "post" && category._ref == $categoryId] {..., "slug": slug.current}`,
-  params: { categoryId: snippetCategory._id },
+  query: `
+    *[_type == "snippet"] | order(publishedAt desc) | {
+      description,
+      "slug": slug.current, 
+      publishedAt
+    }
+  `,
 });
 ---
 
-<MainLayout title={snippetCategory.title}>
-  <div class="space-y-2">
-    <Paragraph>{snippetCategory.description}</Paragraph>
-  </div>
+<MainLayout title="Snippets">
+  <Paragraph>Bunch of stuff I keep I keep forgetting no matter how much I use them.</Paragraph>
 
   <div class="space-y-8">
     {
       snippets.map((snippet) => (
-        <a href={`/snippets/${snippet.slug}`} class="group block">
+        <a href={`/snippets/${snippet.slug}`} class="group block w-fit">
           <Paragraph>{snippet.description}</Paragraph>
           <Paragraph className="text-sm text-muted-foreground">
-            {formatDate(snippet.date)}
+            {formatDate(snippet.publishedAt)}
           </Paragraph>
         </a>
       ))

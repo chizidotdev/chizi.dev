@@ -21,7 +21,7 @@ export function Contact({ children }: { children: React.ReactNode }) {
 
         <div className="flex flex-col gap-1.5">
           {socialLinks.map((link) => (
-            <a target="_blank" href={link.href} className="link">
+            <a key={link.title} target="_blank" href={link.href} className="link">
               {link.title}
             </a>
           ))}
