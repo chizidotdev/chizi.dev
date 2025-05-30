@@ -1,0 +1,7 @@
+---
+import { VisualEditing as SanityVisualEditing } from "@sanity/astro/visual-editing";
+
+const visualEditingEnabled = import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
+---
+
+<SanityVisualEditing enabled={visualEditingEnabled} />

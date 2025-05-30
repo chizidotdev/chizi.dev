@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import VisualEditing from "./visual-editing.astro";
 import Analytics from "@/components/site-analytics.astro";
 import Clock from "@/components/clock.svelte";
 import { Heading } from "@/components/ui/text";
@@ -90,5 +91,6 @@ const size = 16;
         <slot />
       </main>
     </div>
+    <VisualEditing />
   </body>
 </html>
