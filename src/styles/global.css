@@ -37,22 +37,22 @@
   --font-mono: "IBM Plex Mono", monospace;
 
   --background: hsl(0 0% 100%);
-  --foreground: hsl(210 25% 23.8431%);
-  --card: hsl(180 6.6667% 97.0588%);
-  --card-foreground: hsl(210 25% 7.8431%);
+  --foreground: hsl(210 25% 23%);
+  --card: hsl(180 6% 97%);
+  --card-foreground: hsl(210 25% 7%);
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(210 25% 7.8431%);
-  --primary: hsl(210 88.2845% 53.1373%);
+  --popover-foreground: hsl(210 25% 7%);
+  --primary: hsl(210 88% 53%);
   --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(210 25% 7.8431%);
+  --secondary: hsl(210 25% 7%);
   --secondary-foreground: hsl(0 0% 100%);
-  --muted: hsl(240 1.9608% 92%);
-  --muted-foreground: hsl(210 25% 46.8431%);
-  --accent: hsl(211.5789 51.3514% 92.7451%);
-  --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
-  --border: hsl(201.4286 30.4348% 90.9804%);
-  --input: hsl(200 23.0769% 97.451%);
-  --ring: hsl(202.8169 89.1213% 53.1373%);
+  --muted: hsl(240 8% 92%);
+  --muted-foreground: hsl(210 25% 46%);
+  --accent: hsl(211 51% 92%);
+  --accent-foreground: hsl(203 88% 53%);
+  --border: hsl(201 30% 88%);
+  --input: hsl(200 23% 97%);
+  --ring: hsl(202 89% 53%);
   --radius: 0.625rem;
 
   .dark {
@@ -89,7 +89,7 @@
 @layer components {
   .link {
     @apply text-muted-foreground relative inline w-fit rounded p-0.5 transition-colors;
-    @apply after:bg-border hover:after:bg-border after:absolute after:inset-x-0 after:bottom-[10%] after:-z-10 after:h-px after:w-full after:rounded after:transition-all hover:after:h-[80%];
+    @apply after:bg-border hover:after:bg-muted after:absolute after:inset-x-0 after:bottom-[10%] after:-z-10 after:h-px after:w-full after:rounded after:transition-all hover:after:h-[80%];
   }
 }
 
@@ -98,4 +98,15 @@
   @media (width >= 1600px) {
     max-width: 1600px;
   }
+}
+
+:not(pre) > code {
+  font-size: 0.8em;
+  padding-inline: 0.2em;
+  border-radius: 4px;
+  white-space: normal;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  /* color: var(--muted-foreground); */
+  @apply break-words;
 }
