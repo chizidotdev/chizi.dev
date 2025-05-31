@@ -1,10 +1,11 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Heading } from "@/components/ui/text";
+import { siteConfig } from "@/lib/config";
 
 const socialLinks = [
-  { title: "X (Twitter)", href: "https://x.com/chizidotdev" },
-  { title: "LinkedIn", href: "https://www.linkedin.com/in/chizi-wokoma-1b486a226" },
-  { title: "Github", href: "https://github.com/chizidotdev" },
+  { title: "X (Twitter)", href: siteConfig.links.twitter },
+  { title: "LinkedIn", href: siteConfig.links.linkedIn },
+  { title: "Github", href: siteConfig.links.github },
 ];
 
 export function Contact({ children }: { children: React.ReactNode }) {

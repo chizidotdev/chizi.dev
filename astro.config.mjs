@@ -9,6 +9,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: `https://${process.env.SITE_DOMAIN}`,
+  compressHTML: false,
+  prefetch: { prefetchAll: true },
+
   vite: {
     plugins: [tailwindcss()],
   },
@@ -17,8 +21,8 @@ export default defineConfig({
     react(),
     svelte(),
     sanity({
-      projectId: "y8i6z8w9",
-      dataset: "production",
+      projectId: process.env.PUBLIC_SANITY_PROJECT_ID,
+      dataset: process.env.PUBLIC_SANITY_DATASET,
       useCdn: false,
       apiVersion: "2025-01-28",
       studioBasePath: "/studio",
