@@ -29,7 +29,7 @@ const { data: post } = await loadQuery<SanityDocument>({
 ---
 
 <MainLayout title="Snippets">
-  <hgroup class="space-y-1">
+  <hgroup class="max-w-prose space-y-1">
     <Paragraph className="text-muted-foreground text-sm">
       {formatDate(new Date(post._createdAt))}
     </Paragraph>
@@ -37,7 +37,7 @@ const { data: post } = await loadQuery<SanityDocument>({
     <Paragraph className="">{post.description}</Paragraph>
   </hgroup>
 
-  <article class="max-w-prose">
+  <article class="max-w-prose space-y-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:space-y-1">
     <PortableText portableText={post.body} />
   </article>
 </MainLayout>
