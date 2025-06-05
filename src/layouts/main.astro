@@ -1,7 +1,8 @@
 ---
 import "@/styles/global.css";
+import RootLayout from "./root.astro";
 import VisualEditing from "./visual-editing.astro";
-import Analytics from "@/components/site-analytics.astro";
+
 import Clock from "@/components/clock.svelte";
 import { Heading, Paragraph } from "@/components/ui/text";
 import { Contact } from "@/components/contact";
@@ -19,79 +20,49 @@ const navItems = [
   // { title: "Writing", href: "#" },
 ];
 
-const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
 const size = 16;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{pageTitle}</title>
-    <meta name="description" content="Software developer and unabashed nerd." />
+<RootLayout>
+  <div class="container flex min-h-dvh flex-col gap-20 px-6 pt-10 pb-20 2xl:px-12">
+    <header class="flex items-center-safe justify-between">
+      <div class="flex items-center gap-2">
+        <a href="/">
+          <svg
+            width={size}
+            height={size}
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="50" cy="50" r="50" class="fill-foreground"></circle>
+          </svg>
+          <span class="sr-only">Chizi Victor</span>
+        </a>
+        {!!title && <Heading variant="h4">_ &nbsp; {title}</Heading>}
+      </div>
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://chizi.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Chizi Victor" />
-    <meta property="og:description" content="Software developer and unabashed nerd." />
-    <meta property="og:image" content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png" />
+      <nav class="flex gap-3 text-sm">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class="link w-fit">
+              {item.title}
+            </a>
+          ))
+        }
+        <Contact client:load>Contact</Contact>
+      </nav>
+    </header>
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="chizi.dev" />
-    <meta property="twitter:url" content="https://chizi.dev" />
-    <meta name="twitter:title" content="Chizi Victor" />
-    <meta name="twitter:description" content="Software developer and unabashed nerd." />
-    <meta
-      name="twitter:image"
-      content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png"
-    />
-    <Analytics />
-  </head>
+    <main class="flex flex-1 flex-col gap-20">
+      <slot />
+    </main>
 
-  <body>
-    <div class="container flex min-h-dvh flex-col gap-20 px-6 pt-10 pb-20 2xl:px-12">
-      <header class="flex items-center-safe justify-between">
-        <div class="flex items-center gap-2">
-          <a href="/">
-            <svg
-              width={size}
-              height={size}
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="50" cy="50" r="50" class="fill-foreground"></circle>
-            </svg>
-            <span class="sr-only">Chizi Victor</span>
-          </a>
-          {!!title && <Heading variant="h4">_ &nbsp; {title}</Heading>}
-        </div>
+    <footer class="flex items-center justify-between gap-4">
+      <Paragraph className="text-muted-foreground text-sm">Port Harcourt, NG.</Paragraph>
+      <Clock client:load />
+    </footer>
+  </div>
 
-        <nav class="flex gap-3 text-sm">
-          {
-            navItems.map((item) => (
-              <a href={item.href} class="link w-fit">
-                {item.title}
-              </a>
-            ))
-          }
-          <Contact client:load>Contact</Contact>
-        </nav>
-      </header>
-
-      <main class="flex flex-1 flex-col gap-20">
-        <slot />
-      </main>
-
-      <footer class="flex items-center justify-between gap-4">
-        <Paragraph className="text-muted-foreground text-sm">Port Harcourt, NG.</Paragraph>
-
-        <Clock client:load />
-      </footer>
-    </div>
-    <VisualEditing />
-  </body>
-</html>
+  <VisualEditing />
+</RootLayout>
