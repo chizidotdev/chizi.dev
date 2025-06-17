@@ -16,6 +16,7 @@
     "@fontsource/ibm-plex-mono": "^5.2.5",
     "@fontsource/uncut-sans": "^5.2.5",
     "@radix-ui/react-popover": "^1.1.14",
+    "@radix-ui/react-slot": "^1.2.3",
     "@sanity/astro": "^3.2.6",
     "@sanity/client": "^7.1.0",
     "@sanity/code-input": "^5.1.2",

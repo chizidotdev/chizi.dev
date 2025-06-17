@@ -2,9 +2,10 @@
 import type { SanityDocument } from "@sanity/client";
 import { loadQuery } from "@/sanity/lib/load-query";
 import MainLayout from "@/layouts/main.astro";
-import { Heading, Paragraph } from "@/components/ui/text";
+import { Paragraph } from "@/components/ui/text";
 import { formatDate } from "@/lib/utils";
 import PortableText from "@/components/portable-text.astro";
+import { Badge } from "@/components/ui/badge";
 
 export async function getStaticPaths() {
   const { data: snippets } = await loadQuery<SanityDocument[]>({
@@ -23,7 +24,7 @@ export async function getStaticPaths() {
 const { params } = Astro;
 
 const { data: post } = await loadQuery<SanityDocument>({
-  query: `*[_type == "snippet" && slug.current == $slug][0]`,
+  query: `*[_type == "snippet" && slug.current == $slug][0] {..., "tags": tags[]->title}`,
   params,
 });
 ---
@@ -33,8 +34,16 @@ const { data: post } = await loadQuery<SanityDocument>({
     <Paragraph className="text-muted-foreground text-sm">
       {formatDate(new Date(post._createdAt))}
     </Paragraph>
-    <Heading>{post.title}</Heading>
     <Paragraph className="">{post.description}</Paragraph>
+    {
+      !!post.tags?.length && (
+        <div class="flex items-center gap-0.5">
+          {post.tags.map((tag: string) => (
+            <Badge variant="outline">{tag}</Badge>
+          ))}
+        </div>
+      )
+    }
   </hgroup>
 
   <article class="max-w-prose space-y-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:space-y-1">
