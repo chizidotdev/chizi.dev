@@ -28,7 +28,7 @@ const { data: post } = await loadQuery<SanityDocument>({
 });
 ---
 
-<MainLayout title="Snippets">
+<MainLayout title={post.title}>
   <hgroup class="max-w-prose space-y-1">
     <Paragraph className="text-muted-foreground text-sm">
       {formatDate(new Date(post._createdAt))}
