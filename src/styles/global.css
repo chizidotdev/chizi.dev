@@ -47,8 +47,8 @@
   --secondary: hsl(210 25% 7%);
   --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(240 8% 92%);
-  --muted-foreground: hsl(210 25% 46%);
-  --accent: hsl(211 51% 92%);
+  --muted-foreground: hsl(210 15% 60%);
+  --accent: hsl(211 51% 82%);
   --accent-foreground: hsl(203 88% 53%);
   --border: hsl(201 30% 88%);
   --input: hsl(200 23% 97%);
@@ -96,7 +96,7 @@
 @utility container {
   margin-inline: auto;
   @media (width >= 40rem) {
-    max-width: 45rem;
+    max-width: 48rem;
   }
 }
 

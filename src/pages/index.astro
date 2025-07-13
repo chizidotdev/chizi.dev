@@ -1,16 +1,86 @@
 ---
-import PortableText from "@/components/portable-text.astro";
+import { Heading, Paragraph } from "@/components/ui/text";
 import MainLayout from "@/layouts/main.astro";
-import { loadQuery } from "@/sanity/lib/load-query";
-import type { SanityDocument } from "@sanity/client";
 
-const { data: settings } = await loadQuery<SanityDocument>({
-  query: `*[_type == "siteSettings"][0]`,
-});
+const workexperience = [
+  {
+    role: "Co-Founder",
+    company: "Spienn",
+    location: "Remote, NG",
+    date: { start: "2025", end: "Present" },
+  },
+  {
+    role: "CTO, Founding Engineer",
+    company: "Slimepay Finance",
+    location: "Remote, NG",
+    date: { start: "2024", end: "2025" },
+  },
+  {
+    role: "Software Engineer",
+    company: "audIT",
+    location: "Remote, TX",
+    date: { start: "2022", end: "2024" },
+  },
+  {
+    role: "Frontend Developer",
+    company: "Cytecode",
+    location: "Port Harcourt, NG",
+    date: { start: "2021", end: "2022" },
+  },
+];
 ---
 
 <MainLayout>
-  <div class="mt-auto max-w-prose">
-    <PortableText portableText={settings.about} />
-  </div>
+  <section class="">
+    <div>
+      <Heading variant="h3">Chizi Victor</Heading>
+      <Paragraph className="text-muted-foreground leading-none">Software developer</Paragraph>
+    </div>
+
+    <Paragraph>
+      Hi, I'm Chizi — a software developer and design engineer based in Port Harcourt, Nigeria.
+      <br /><br />
+      I solve unique business problems for startups and business owners in finance and commerce. My projects
+      are focused on accessibility, typography, animations and design systems.
+      <br /><br />
+      Currently, helping businesses launch and manage their commerce.
+    </Paragraph>
+  </section>
+
+  <div></div>
+
+  <section>
+    <Heading variant="h4">Experience</Heading>
+
+    <div class="space-y-6">
+      {
+        workexperience.map((exp) => (
+          <div class="flex flex-col justify-between gap-2 sm:flex-row-reverse sm:gap-4">
+            <Paragraph className="text-sm sm:text-muted-foreground text-muted-foreground/70">
+              {exp.date.start} - {exp.date.end}
+            </Paragraph>
+
+            <div>
+              <Paragraph>{exp.role}</Paragraph>
+              <Paragraph className="text-muted-foreground">
+                {exp.company} - {exp.location}
+              </Paragraph>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  section {
+    display: grid;
+    gap: calc(var(--spacing) * 10) /* 2.5rem = 40px */;
+
+    @media (width >= 40rem /* 640px */) {
+      gap: calc(var(--spacing) * 4) /* 1rem = 16px */;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+</style>

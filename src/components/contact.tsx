@@ -12,11 +12,11 @@ export function Contact({ children }: { children: React.ReactNode }) {
   return (
     <Popover modal>
       <PopoverTrigger className="link w-fit">{children}</PopoverTrigger>
-      <PopoverContent align="start" className="space-y-8 text-sm">
+      <PopoverContent align="end" className="space-y-8 text-sm">
         <div className="flex flex-col gap-1">
           <Heading variant="h4">Email</Heading>
-          <a target="_blank" href="mailto:chizi@aidmedium.com" className="link">
-            chizi@aidmedium.com
+          <a target="_blank" href="mailto:chizi@spienn.com" className="link">
+            chizi@spienn.com
           </a>
         </div>
 
