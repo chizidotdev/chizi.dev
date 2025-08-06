@@ -96,7 +96,7 @@
 @utility container {
   margin-inline: auto;
   @media (width >= 40rem) {
-    max-width: 48rem;
+    max-width: 60rem;
   }
 }
 

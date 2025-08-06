@@ -3,38 +3,42 @@ import "@/styles/global.css";
 import RootLayout from "./root.astro";
 
 import Clock from "@/components/clock.svelte";
-import { Heading, Paragraph } from "@/components/ui/text";
+import { Paragraph } from "@/components/ui/text";
 import { Contact } from "@/components/contact";
+import { cn } from "@/lib/utils";
 
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
+const currentPath = new URL(Astro.request.url).pathname;
 
 const navItems = [
-  { title: "Index", href: "/" },
-  // { title: "Projects", href: "/projects" },
+  // { title: "Index", href: "/" },
+  { title: "Writing", href: "/writing" },
+  { title: "Projects", href: "/projects" },
   { title: "Snippets", href: "/snippets" },
-  // { title: "Writing", href: "#" },
 ];
 ---
 
 <RootLayout title={title}>
   <div class="container flex min-h-dvh flex-col gap-20 px-6 py-10 2xl:px-12">
-    <header class="flex items-center-safe justify-between">
+    <header class="flex flex-wrap items-center-safe justify-between gap-x-20 gap-y-4">
       <div class="flex items-center gap-2">
         <a href="/">
           <img src="/pfp.png" class="size-6 rounded-sm" />
           <span class="sr-only">Chizi Victor</span>
         </a>
-        {!!title && <Heading variant="h4">_ &nbsp; {title}</Heading>}
       </div>
 
-      <nav class="flex gap-3 text-sm">
+      <nav class="flex w-full max-w-sm justify-between gap-5 text-sm sm:w-fit">
         {
           navItems.map((item) => (
-            <a href={item.href} class="link w-fit">
+            <a
+              href={item.href}
+              class={cn("link w-fit", currentPath === item.href && "after:bg-muted after:h-[80%]")}
+            >
               {item.title}
             </a>
           ))

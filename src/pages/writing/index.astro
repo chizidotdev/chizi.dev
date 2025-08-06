@@ -1,0 +1,29 @@
+---
+import { Heading, Paragraph } from "@/components/ui/text";
+import MainLayout from "@/layouts/main.astro";
+import { formatDate } from "@/lib/utils";
+import { loadQuery } from "@/sanity/lib/load-query";
+import type { SanityDocument } from "@sanity/client";
+
+const { data: writing } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "post"] | order(_createdAt) | {
+      title,
+      description,
+      "slug": slug.current, 
+      "category": category->title, 
+      publishedAt
+    }`,
+});
+---
+
+<MainLayout title="Writing">
+  {
+    writing.map((w) => (
+      <a href={`/writing/${w.slug}`} class="group block w-fit">
+        <Heading variant="h4">{w.title}</Heading>
+        <!-- <Paragraph>{w.description}</Paragraph> -->
+        <Paragraph className="text-sm text-muted-foreground">{formatDate(w.publishedAt)}</Paragraph>
+      </a>
+    ))
+  }
+</MainLayout>
