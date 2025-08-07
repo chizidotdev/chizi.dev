@@ -110,3 +110,7 @@
   /* color: var(--muted-foreground); */
   @apply break-words;
 }
+
+p {
+  min-height: 1rem;
+}
