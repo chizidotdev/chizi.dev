@@ -34,12 +34,12 @@ const { data: snippets } = await loadQuery<SanityDocument[]>({
             </Paragraph>
           </div>
 
-          <div class="hidden h-8 grow items-center sm:flex">
+          <div class="hidden h-6 grow items-center sm:flex">
             <span class="bg-border/40 h-px w-full" />
           </div>
 
           {!!snippet.tags?.length && (
-            <div class="mt-1.5 hidden h-8 items-start gap-0.5 sm:flex">
+            <div class="mt-0.5 hidden h-fit items-start gap-0.5 sm:flex">
               {snippet.tags.map((tag: string) => (
                 <Badge variant="outline">{tag}</Badge>
               ))}
