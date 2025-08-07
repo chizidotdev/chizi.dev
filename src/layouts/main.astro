@@ -15,7 +15,7 @@ const { title } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
 
 const navItems = [
-  // { title: "Index", href: "/" },
+  { title: "Index", href: "/" },
   { title: "Writing", href: "/writing" },
   { title: "Projects", href: "/projects" },
   { title: "Snippets", href: "/snippets" },
@@ -37,7 +37,7 @@ const navItems = [
           navItems.map((item) => (
             <a
               href={item.href}
-              class={cn("link w-fit", currentPath === item.href && "after:bg-muted after:h-[80%]")}
+              class={cn("link w-fit", currentPath === item.href && "text-foreground")}
             >
               {item.title}
             </a>
