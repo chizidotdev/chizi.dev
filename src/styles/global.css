@@ -100,13 +100,82 @@
   }
 }
 
-:not(pre) > code {
-  font-size: 0.8em;
-  padding-inline: 0.2em;
-  border-radius: 4px;
-  white-space: normal;
-  background: var(--muted);
-  border: 1px solid var(--border);
-  /* color: var(--muted-foreground); */
-  @apply break-words;
+.editor {
+  margin-bottom: 1rem;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  /* List styles */
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+  }
+
+  li,
+  p {
+    margin-block: 0.5em;
+    line-height: 1.7;
+  }
+
+  li {
+    list-style: disc;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.1;
+    margin-top: 1.5rem;
+    text-wrap: pretty;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  blockquote {
+    color: var(--muted-foreground);
+    border-left: 2px solid var(--border);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  p.is-editor-empty:first-child::before {
+    color: var(--muted-foreground);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  :not(pre) > code {
+    font-size: 0.8em;
+    padding-inline: 0.2em;
+    border-radius: 4px;
+    white-space: normal;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    /* color: var(--muted-foreground); */
+    overflow-wrap: break-word;
+  }
 }

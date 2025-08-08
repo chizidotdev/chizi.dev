@@ -6,7 +6,7 @@ import { loadQuery } from "@/sanity/lib/load-query";
 import type { SanityDocument } from "@sanity/client";
 
 const { data: writing } = await loadQuery<SanityDocument[]>({
-  query: `*[_type == "post"] | order(_createdAt) | {
+  query: `*[_type == "post"] | order(publishedAt desc) | {
       title,
       description,
       "slug": slug.current, 

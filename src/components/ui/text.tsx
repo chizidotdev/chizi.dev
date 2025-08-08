@@ -9,7 +9,7 @@ const headingVariants = cva("scroll-m-20 font-bold", {
       h1: "text-2xl",
       h2: "text-xl",
       h3: "text-lg",
-      h4: "font-semibold",
+      h4: "",
     },
   },
 });

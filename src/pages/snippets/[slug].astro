@@ -2,8 +2,8 @@
 import type { SanityDocument } from "@sanity/client";
 import { loadQuery } from "@/sanity/lib/load-query";
 import MainLayout from "@/layouts/main.astro";
-import { Paragraph } from "@/components/ui/text";
-import { formatDate } from "@/lib/utils";
+import { Heading, Paragraph } from "@/components/ui/text";
+import { cn, formatDate } from "@/lib/utils";
 import PortableText from "@/components/portable-text.astro";
 import { Badge } from "@/components/ui/badge";
 
@@ -23,30 +23,63 @@ export async function getStaticPaths() {
 
 const { params } = Astro;
 
-const { data: post } = await loadQuery<SanityDocument>({
+const { data: snippet } = await loadQuery<SanityDocument>({
   query: `*[_type == "snippet" && slug.current == $slug][0] {..., "tags": tags[]->title}`,
   params,
 });
+
+const { data: snippets } = await loadQuery<SanityDocument[]>({
+  query: `
+    *[_type == "snippet"] | order(publishedAt desc) | {
+      title,
+      "slug": slug.current, 
+      publishedAt,
+      _id
+    }
+  `,
+});
+
+const currentIndex = snippets.findIndex((p) => p._id === snippet._id);
+const navigationSnippets = snippets.slice(Math.max(0, currentIndex - 3), currentIndex + 4);
 ---
 
-<MainLayout title={post.title}>
+<MainLayout title={snippet.title}>
   <hgroup class="max-w-prose space-y-1">
-    <Paragraph className="text-muted-foreground text-sm">
-      {formatDate(new Date(post._createdAt))}
-    </Paragraph>
-    <Paragraph className="">{post.description}</Paragraph>
     {
-      !!post.tags?.length && (
+      !!snippet.tags?.length && (
         <div class="flex items-center gap-0.5">
-          {post.tags.map((tag: string) => (
+          {snippet.tags.map((tag: string) => (
             <Badge variant="outline">{tag}</Badge>
           ))}
         </div>
       )
     }
+    <Heading>{snippet.title}</Heading>
+    <Paragraph className="">{snippet.description}</Paragraph>
+    <Paragraph className="text-muted-foreground text-sm">
+      {formatDate(new Date(snippet._createdAt))}
+    </Paragraph>
   </hgroup>
 
-  <article class="max-w-prose space-y-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:space-y-1">
-    <PortableText portableText={post.body} />
-  </article>
+  <div class="relative grid gap-20 lg:grid-cols-[minmax(0,1fr)_200px]">
+    <article class="editor max-w-full space-y-2">
+      <PortableText portableText={snippet.body} />
+    </article>
+
+    <aside class="sticky top-20 hidden h-fit text-sm lg:block">
+      <Heading variant="h4" className="mb-6">Snippets</Heading>
+      <nav class="w-full space-y-3">
+        {
+          navigationSnippets.map((navSnippet) => (
+            <a
+              href={`/snippets/${navSnippet.slug}`}
+              class={cn("block", navSnippet._id === snippet._id ? "text-foreground" : "link")}
+            >
+              <Paragraph>{navSnippet.title}</Paragraph>
+            </a>
+          ))
+        }
+      </nav>
+    </aside>
+  </div>
 </MainLayout>
