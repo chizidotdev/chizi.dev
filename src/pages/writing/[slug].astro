@@ -3,7 +3,7 @@ import type { SanityDocument } from "@sanity/client";
 import { loadQuery } from "@/sanity/lib/load-query";
 import MainLayout from "@/layouts/main.astro";
 import { Heading, Paragraph } from "@/components/ui/text";
-import { formatDate } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import PortableText from "@/components/portable-text.astro";
 import { Badge } from "@/components/ui/badge";
 
@@ -27,10 +27,22 @@ const { data: post } = await loadQuery<SanityDocument>({
   query: `*[_type == "post" && slug.current == $slug][0] { ..., "category": category->title }`,
   params,
 });
+
+const { data: allPosts } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "post"] | order(publishedAt desc) {
+    title,
+    "slug": slug.current,
+    publishedAt,
+    _id
+  }`,
+});
+
+const currentIndex = allPosts.findIndex((p) => p._id === post._id);
+const navigationPosts = allPosts.slice(Math.max(0, currentIndex - 2), currentIndex + 3);
 ---
 
 <MainLayout title={post.title}>
-  <hgroup class="max-w-prose space-y-1">
+  <hgroup class="space-y-1">
     {
       !!post.category && (
         <div class="flex items-center gap-0.5">
@@ -42,10 +54,29 @@ const { data: post } = await loadQuery<SanityDocument>({
     <Paragraph className="text-muted-foreground text-sm">
       {formatDate(new Date(post._createdAt))}
     </Paragraph>
-    <Paragraph className="">{post.description}</Paragraph>
   </hgroup>
 
-  <article class="max-w-prose space-y-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:space-y-1">
-    <PortableText portableText={post.body} />
-  </article>
+  <div class="relative grid gap-10 lg:grid-cols-[1fr_250px]">
+    <article
+      class="w-full space-y-2 text-base [&_p]:min-h-4 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:space-y-1"
+    >
+      <PortableText portableText={post.body} />
+    </article>
+
+    <aside class="sticky top-20 ml-auto hidden h-fit w-fit text-sm lg:block">
+      <Heading variant="h4" className="mb-6">Writing</Heading>
+      <nav class="space-y-2">
+        {
+          navigationPosts.map((navPost) => (
+            <a
+              href={`/writing/${navPost.slug}`}
+              class={cn("block", navPost._id === post._id ? "text-foreground" : "link")}
+            >
+              <Paragraph>{navPost.title}</Paragraph>
+            </a>
+          ))
+        }
+      </nav>
+    </aside>
+  </div>
 </MainLayout>
