@@ -1,5 +1,5 @@
 ---
-import { Paragraph } from "@/components/ui/text";
+import { Heading, Paragraph } from "@/components/ui/text";
 import { formatDate } from "@/lib/utils";
 import MainLayout from "@/layouts/main.astro";
 import { loadQuery } from "@/sanity/lib/load-query";
@@ -19,34 +19,35 @@ const { data: snippets } = await loadQuery<SanityDocument[]>({
 ---
 
 <MainLayout title="Snippets">
-  <Paragraph>Bunch of stuff I keep I keep forgetting no matter how much I use them.</Paragraph>
-
-  <div class="space-y-8">
-    {
-      snippets.map((snippet) => (
-        <div class="flex items-start justify-between gap-4">
-          <div class="">
-            <a href={`/snippets/${snippet.slug}`} class="w-fit">
-              <Paragraph>{snippet.description}</Paragraph>
-            </a>
-            <Paragraph className="text-sm text-muted-foreground">
-              {formatDate(snippet.publishedAt)}
-            </Paragraph>
-          </div>
-
-          <div class="hidden h-6 grow items-center sm:flex">
-            <span class="bg-border/40 h-px w-full" />
-          </div>
-
-          {!!snippet.tags?.length && (
-            <div class="mt-0.5 hidden h-fit items-start gap-0.5 sm:flex">
-              {snippet.tags.map((tag: string) => (
-                <Badge variant="outline">{tag}</Badge>
-              ))}
-            </div>
-          )}
-        </div>
-      ))
-    }
+  <div class="space-y-2">
+    <Heading>Snippets</Heading>
+    <Paragraph>Bunch of stuff I keep I keep forgetting no matter how much I use them.</Paragraph>
   </div>
+
+  {
+    snippets.map((snippet) => (
+      <div class="flex flex-col-reverse items-start justify-between gap-2 sm:flex-row">
+        <div class="">
+          <a href={`/snippets/${snippet.slug}`} class="w-fit">
+            <Paragraph>{snippet.description}</Paragraph>
+          </a>
+          <Paragraph className="text-sm text-muted-foreground">
+            {formatDate(snippet.publishedAt)}
+          </Paragraph>
+        </div>
+
+        <div class="hidden h-6 grow items-center sm:flex">
+          <span class="bg-border/40 h-px w-full" />
+        </div>
+
+        {!!snippet.tags?.length && (
+          <div class="mt-0.5 flex h-fit items-start gap-0.5">
+            {snippet.tags.map((tag: string) => (
+              <Badge variant="outline">{tag}</Badge>
+            ))}
+          </div>
+        )}
+      </div>
+    ))
+  }
 </MainLayout>

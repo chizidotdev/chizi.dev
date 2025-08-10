@@ -1,5 +1,6 @@
 ---
-import { Heading, Paragraph } from "@/components/ui/text";
+import { Badge } from "@/components/ui/badge";
+import { Paragraph } from "@/components/ui/text";
 import MainLayout from "@/layouts/main.astro";
 import { formatDate } from "@/lib/utils";
 import { loadQuery } from "@/sanity/lib/load-query";
@@ -19,11 +20,23 @@ const { data: writing } = await loadQuery<SanityDocument[]>({
 <MainLayout title="Writing">
   {
     writing.map((w) => (
-      <a href={`/writing/${w.slug}`} class="group block w-fit">
-        <Heading variant="h4">{w.title}</Heading>
-        <!-- <Paragraph>{w.description}</Paragraph> -->
-        <Paragraph className="text-sm text-muted-foreground">{formatDate(w.publishedAt)}</Paragraph>
-      </a>
+      <div class="flex flex-col-reverse items-start justify-between gap-2 sm:flex-row">
+        <div class="">
+          <a href={`/snippets/${w.slug}`} class="w-fit">
+            <Paragraph>{w.title}</Paragraph>
+          </a>
+          <Paragraph className="text-sm text-muted-foreground">
+            {formatDate(w.publishedAt)}
+          </Paragraph>
+        </div>
+
+        {w.category && (
+          <div class="hidden h-6 grow items-center sm:flex">
+            <span class="bg-border/40 h-px w-full" />
+          </div>
+          <Badge variant="outline">{w.category}</Badge>
+        )}
+      </div>
     ))
   }
 </MainLayout>
