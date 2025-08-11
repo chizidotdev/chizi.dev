@@ -5,8 +5,8 @@ import PortableTextCodeCopyButton from "./portable-text-code-copy.svelte";
 const { code, language } = Astro.props.node; // Sanity sends `code` and `language`
 ---
 
-<div class="bg-muted max-w-[calc(100vw-2rem)] rounded-md p-1">
-  <div class="flex items-center justify-between px-2 pt-1 pb-2">
+<div class="bg-muted/70 max-w-[calc(100vw-2rem)] rounded-md p-1">
+  <div class="text-muted-foreground flex items-center justify-between px-2 pt-1 pb-1.5">
     <span class="text-sm">{language}</span>
     <PortableTextCodeCopyButton client:load code={code} />
   </div>
