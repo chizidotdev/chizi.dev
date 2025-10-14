@@ -116,7 +116,7 @@
 
   li,
   p {
-    margin-block: 0.5em;
+    min-height: 1rem;
     line-height: 1.7;
   }
 

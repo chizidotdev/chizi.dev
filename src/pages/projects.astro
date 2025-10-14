@@ -7,7 +7,7 @@ import type { SanityDocument } from "@sanity/client";
 import { Image } from "astro:assets";
 
 const { data: projects } = await loadQuery<SanityDocument[]>({
-  query: `*[_type == "project"] | order(_createdAt)`,
+  query: `*[_type == "project"] | order(publishedAt desc)`,
 });
 ---
 
