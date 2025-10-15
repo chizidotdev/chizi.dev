@@ -57,7 +57,7 @@ const navigationSnippets = snippets.slice(Math.max(0, currentIndex - 3), current
     <Heading>{snippet.title}</Heading>
     <Paragraph className="">{snippet.description}</Paragraph>
     <Paragraph className="text-muted-foreground text-sm">
-      {formatDate(new Date(snippet._createdAt))}
+      {formatDate(new Date(snippet.publishedAt))}
     </Paragraph>
   </hgroup>
 
