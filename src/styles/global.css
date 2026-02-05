@@ -36,7 +36,7 @@
   --font-sans: "Uncut Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --background: hsl(0 0% 100%);
+  --background: hsl(0 0% 99%);
   --foreground: hsl(210 25% 23%);
   --card: hsl(180 6% 97%);
   --card-foreground: hsl(210 25% 7%);
@@ -51,8 +51,8 @@
   --accent: hsl(211 51% 82%);
   --accent-foreground: hsl(203 88% 53%);
   --border: hsl(201 30% 88%);
-  --input: hsl(200 23% 97%);
-  --ring: hsl(202 89% 53%);
+  --input: hsl(200 23% 92%);
+  --ring: hsl(210 89% 53%);
   --radius: 0.625rem;
 
   .dark {

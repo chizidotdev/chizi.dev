@@ -1,0 +1,6 @@
+.idea
+*.env
+bin
+tmp
+pb_data
+.DS_Store

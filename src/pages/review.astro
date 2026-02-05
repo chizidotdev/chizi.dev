@@ -1,0 +1,18 @@
+---
+import MainLayout from "@/layouts/main.astro";
+import { Review } from "@/components/review";
+import { Heading, Paragraph } from "@/components/ui/text";
+---
+
+<MainLayout>
+  <hgroup>
+    <Heading variant="h2">Leave a Review</Heading>
+    <Paragraph>
+      Worked with me on a project? I'd love to hear your feedback.
+      <br class="hidden sm:block" />
+      Share your experience and help others learn what it's like to collaborate together.
+    </Paragraph>
+  </hgroup>
+
+  <Review client:load />
+</MainLayout>

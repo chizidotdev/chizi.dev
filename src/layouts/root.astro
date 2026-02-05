@@ -6,6 +6,7 @@ Astro.response.headers.set(
 );
 
 import Analytics from "@/components/site-analytics.astro";
+import { Toaster } from "@/components/ui/sonner";
 
 interface Props {
   title?: string;
@@ -46,5 +47,6 @@ const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
 
   <body>
     <slot />
+    <Toaster client:load />
   </body>
 </html>
