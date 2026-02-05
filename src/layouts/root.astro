@@ -10,11 +10,13 @@ import { Toaster } from "@/components/ui/sonner";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 
 const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
+const pageDescription = description || "Software developer and unabashed nerd.";
 ---
 
 <html lang="en">
@@ -23,13 +25,13 @@ const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/pfp.png" />
     <title>{pageTitle}</title>
-    <meta name="description" content="Software developer and unabashed nerd." />
+    <meta name="description" content={pageDescription} />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://chizi.dev" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Chizi Victor" />
-    <meta property="og:description" content="Software developer and unabashed nerd." />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png" />
 
     <!-- Twitter Meta Tags -->
@@ -37,7 +39,7 @@ const pageTitle = title ? `${title} - Chizi Victor` : "Chizi Victor";
     <meta property="twitter:domain" content="chizi.dev" />
     <meta property="twitter:url" content="https://chizi.dev" />
     <meta name="twitter:title" content="Chizi Victor" />
-    <meta name="twitter:description" content="Software developer and unabashed nerd." />
+    <meta name="twitter:description" content={pageDescription} />
     <meta
       name="twitter:image"
       content="https://ik.imagekit.io/chizidotdev/portfolio/og-image.png"
