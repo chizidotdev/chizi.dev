@@ -1,5 +1,6 @@
 ---
 import { urlForImage } from "@/sanity/lib/url-for-image";
+import { Paragraph } from "@/components/ui/text";
 
 const { asset, alt } = Astro.props.node;
 
@@ -7,7 +8,10 @@ const url = urlForImage(asset).url();
 const webpUrl = urlForImage(asset).format("webp").url();
 ---
 
-<picture>
-  <source srcset={webpUrl} type="image/webp" />
-  <img class="my-3" src={url} alt={alt} />
-</picture>
+<div class="my-3">
+  <picture>
+    <source srcset={webpUrl} type="image/webp" />
+    <img class="rounded-md" src={url} alt={alt} />
+  </picture>
+  <Paragraph className="text-muted-foreground mt-0.5 text-center text-xs">{alt}</Paragraph>
+</div>
