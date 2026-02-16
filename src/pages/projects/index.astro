@@ -1,0 +1,36 @@
+---
+import { Heading, Paragraph } from "@/components/ui/text";
+import MainLayout from "@/layouts/main.astro";
+import { loadQuery } from "@/sanity/lib/load-query";
+import { urlForImage } from "@/sanity/lib/url-for-image";
+import type { SanityDocument } from "@sanity/client";
+import { Image } from "astro:assets";
+import { ChevronRight } from "lucide-react";
+
+const { data: projects } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "project"] | order(publishedAt desc) | { ..., "slug": slug.current }`,
+});
+---
+
+<MainLayout title="Projects">
+  {
+    projects.map((project) => (
+      <div class="relative flex flex-col gap-6 lg:flex-row">
+        <a href={`/projects/${project.slug}`} class="group top-20 h-fit lg:sticky lg:flex-1">
+          <Image
+            inferSize
+            src={urlForImage(project.images[0]).url()}
+            alt={project.images[0].alt}
+            class="rounded-md"
+          />
+          <div class="mt-2 flex items-center justify-between gap-2">
+            <Heading variant="h4">{project.title}</Heading>
+            <Paragraph className="text-muted-foreground lg:opacity-0 group-hover:lg:opacity-100">
+              Case study <ChevronRight className="inline size-4" />
+            </Paragraph>
+          </div>
+        </a>
+      </div>
+    ))
+  }
+</MainLayout>

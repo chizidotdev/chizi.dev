@@ -1,0 +1,77 @@
+---
+import { urlForImage } from "@/sanity/lib/url-for-image";
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "@/sanity/lib/load-query";
+import MainLayout from "@/layouts/main.astro";
+import { Heading, Paragraph } from "@/components/ui/text";
+import { cn, formatDate } from "@/lib/utils";
+import PortableText from "@/components/portable-text.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const { data: projects } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "project"]`,
+  });
+
+  return projects.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+
+const { data: project } = await loadQuery<SanityDocument>({
+  query: `*[_type == "project" && slug.current == $slug][0] {..., "slug": slug.current }`,
+  params,
+});
+
+const { data: projects } = await loadQuery<SanityDocument[]>({
+  query: `
+    *[_type == "project"] | order(publishedAt desc) | {
+      title,
+      "slug": slug.current, 
+      publishedAt,
+      _id
+    }
+  `,
+});
+
+const currentIndex = projects.findIndex((p) => p._id === project._id);
+const navigationProjects = projects.slice(Math.max(0, currentIndex - 3), currentIndex + 4);
+---
+
+<MainLayout title={project.title}>
+  <hgroup class="max-w-prose space-y-1">
+    <Heading>{project.title}</Heading>
+    <Paragraph className="">{project.description}</Paragraph>
+    <Paragraph className="text-muted-foreground text-sm">
+      {formatDate(new Date(project.publishedAt))}
+    </Paragraph>
+  </hgroup>
+
+  <div class="relative grid gap-20 lg:grid-cols-[minmax(0,1fr)_200px]">
+    <article class="editor max-w-full space-y-2">
+      <PortableText portableText={project.body} />
+    </article>
+
+    <aside class="sticky top-20 hidden h-fit text-sm lg:block">
+      <Heading variant="h4" className="mb-6">Projects</Heading>
+      <nav class="w-full space-y-3">
+        {
+          navigationProjects.map((navProject) => (
+            <a
+              href={`/projects/${navProject.slug}`}
+              class={cn("block", navProject._id === project._id ? "text-foreground" : "link")}
+            >
+              <Paragraph>{navProject.title}</Paragraph>
+            </a>
+          ))
+        }
+      </nav>
+    </aside>
+  </div>
+</MainLayout>

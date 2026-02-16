@@ -10,6 +10,11 @@ export const projectType = defineType({
       type: "string",
     }),
     defineField({
+      name: "slug",
+      type: "slug",
+      options: { source: "title", maxLength: 96 },
+    }),
+    defineField({
       name: "description",
       type: "text",
     }),
@@ -24,6 +29,10 @@ export const projectType = defineType({
           fields: [{ name: "alt", type: "string", title: "Alt Text" }],
         },
       ],
+    }),
+    defineField({
+      name: "body",
+      type: "blockContent",
     }),
     defineField({
       name: "publishedAt",
