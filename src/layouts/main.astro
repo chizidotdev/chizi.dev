@@ -6,6 +6,7 @@ import Clock from "@/components/clock.svelte";
 import { Paragraph } from "@/components/ui/text";
 import { Contact } from "@/components/contact";
 import { cn } from "@/lib/utils";
+import { Image } from "astro:assets";
 
 interface Props {
   title?: string;
@@ -28,8 +29,15 @@ const navItems = [
     <header class="flex flex-wrap items-center-safe justify-between gap-x-20 gap-y-4">
       <div class="flex items-center gap-2">
         <a href="/" class="relative">
-          <img src="/pfp.png" class="size-7 rounded-sm" />
-          <!-- <img src="/hat.png" class="absolute -top-2 -right-2.5 rotate-20 rounded-sm" /> -->
+          <Image
+            loading="eager"
+            alt="Profile"
+            src="/pfp.png"
+            class="rounded-sm"
+            height={28}
+            width={28}
+          />
+          <!-- <img alt="Merry Christmas" src="/hat.png" class="absolute -top-2 -right-2.5 rotate-20 rounded-sm" /> -->
           <span class="sr-only">Chizi Victor</span>
         </a>
       </div>
