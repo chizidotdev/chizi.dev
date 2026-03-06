@@ -11,5 +11,10 @@ const { code, language } = Astro.props.node; // Sanity sends `code` and `languag
     <PortableTextCodeCopyButton client:load code={code} />
   </div>
 
-  <Code class="rounded-md p-3 text-[0.8em]" code={code} lang={language} theme="poimandres" />
+  <Code
+    class="rounded-md p-3 text-[0.8em]"
+    code={code}
+    lang={language === "mysql" ? "sql" : language}
+    theme="poimandres"
+  />
 </div>
