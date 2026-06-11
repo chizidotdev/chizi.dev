@@ -1,7 +1,7 @@
 FROM node:lts AS base
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml* ./
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml ./
 
 FROM base AS prod-deps
 RUN npm i -g pnpm && pnpm i --frozen-lockfile;
