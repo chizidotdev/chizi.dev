@@ -15,6 +15,7 @@ const env = loadEnv(process.env.NODE_ENV || "development", process.cwd(), "");
 export default defineConfig({
   site: `https://${process.env.SITE_DOMAIN}`,
   prefetch: { prefetchAll: true },
+  image: {domains: ["cdn.sanity.io"]},
 
   vite: {
     plugins: [tailwindcss()],
